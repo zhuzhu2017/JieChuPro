@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--间距尺寸-->
+    <dimen name="space_1">1dp</dimen>
+    <dimen name="space_5">5dp</dimen>
+    <dimen name="space_10">10dp</dimen>
+    <dimen name="space_20">20dp</dimen>
+    <dimen name="space_40">40dp</dimen>
+    <dimen name="space_50">50dp</dimen>
+    <!--控件高度-->
+    <dimen name="common_height">40dp</dimen>
+    <!--字体大小-->
+    <dimen name="xxx_large_font">25sp</dimen>
+    <dimen name="common_font">15sp</dimen>
+</resources>
