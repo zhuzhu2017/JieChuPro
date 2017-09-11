@@ -6,4 +6,6 @@
     <color name="white">#fff</color>
     <color name="common_blue">#3296FC</color>
     <color name="common_gray">#DDE1E4</color>
+    <color name="common_green">#29ECBC</color>
+    <color name="common_yellow">#FC8657</color>
 </resources>
