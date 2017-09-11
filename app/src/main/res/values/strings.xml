@@ -5,4 +5,5 @@
     <string name="account_string">请输入账号</string>
     <string name="pwd_string">请输入密码</string>
     <string name="ip_string">1.192.90.115:9922</string>
+    <string name="filter_string">条件筛选：</string>
 </resources>
