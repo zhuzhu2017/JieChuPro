@@ -1,0 +1,1 @@
+﻿{"lines": [{"lname": "陇海线", "plants": [{"pname": "洛阳供电车间", "workstation": [{"id": "","wname": "义马网工区"},{"id": "","wname": "新安县网工区"},{"id": "","wname": "洛阳东网工区"},{"id": "","wname": "洛阳网工区"}]}, {"pname": "邓州供电车间", "workstation": []}, {"pname": "三门峡供电车间", "workstation": []}, {"pname": "南阳西供电车间", "workstation": []}]}, {"lname": "焦柳线", "plants": []}]}

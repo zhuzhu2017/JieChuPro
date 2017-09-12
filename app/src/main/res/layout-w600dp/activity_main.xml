@@ -25,17 +25,20 @@
                 android:textSize="@dimen/title_font" />
             <!--线路-->
             <android.support.v7.widget.RecyclerView
+                android:id="@+id/lv_line"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_40" />
             <!--车间-->
             <android.support.v7.widget.RecyclerView
+                android:id="@+id/lv_plant"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_20"
                 android:visibility="gone" />
             <!--工区-->
             <android.support.v7.widget.RecyclerView
+                android:id="@+id/lv_workstation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_20"

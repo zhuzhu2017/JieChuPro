@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/filter_bg"
+    android:orientation="vertical">
+
+    <!--标题栏-->
+    <include layout="@layout/layout_header_title" />
+
+    <!--主布局-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/space_40"
+        android:paddingLeft="@dimen/space_70"
+        android:paddingRight="@dimen/space_70"
+        android:paddingTop="@dimen/space_40">
+
+        <!--第一种工作票-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:elevation="@dimen/space_5"
+            android:orientation="vertical">
+
+            <!--标题-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_50"
+                android:background="@color/common_blue"
+                android:gravity="center"
+                android:text="第一种工作票"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_font" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/space_40"
+                android:paddingRight="@dimen/space_40"
+                android:paddingTop="@dimen/space_20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="237"
+                    android:textColor="@color/common_blue"
+                    android:textSize="@dimen/xxxx_large_font" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:text="工作票总数"
+                    android:textColor="@color/common_blue"
+                    android:textSize="@dimen/title_font" />
+
+            </LinearLayout>
+            <!--已完成-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/space_20"
+                android:paddingRight="@dimen/space_20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="已完成"
+                    android:textColor="@color/common_blue"
+                    android:textSize="@dimen/title_font" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="200"
+                    android:textColor="@color/common_blue"
+                    android:textSize="@dimen/xxx_large_font" />
+
+            </LinearLayout>
+            <!--未完成-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_20"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/space_20"
+                android:paddingRight="@dimen/space_20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="未完成"
+                    android:textColor="@color/common_blue"
+                    android:textSize="@dimen/title_font" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="37"
+                    android:textColor="@color/common_blue"
+                    android:textSize="@dimen/xxx_large_font" />
+
+            </LinearLayout>
+            <!--作废-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_20"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/space_20"
+                android:paddingRight="@dimen/space_20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="作废"
+                    android:textColor="@color/light_gray"
+                    android:textSize="@dimen/title_font" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="0"
+                    android:textColor="@color/light_gray"
+                    android:textSize="@dimen/xxx_large_font" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--第二种工作票-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/space_25"
+            android:layout_marginRight="@dimen/space_25"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:elevation="@dimen/space_5"
+            android:orientation="vertical">
+
+            <!--标题-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_50"
+                android:background="@color/common_yellow"
+                android:gravity="center"
+                android:text="第二种工作票"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_font" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/space_40"
+                android:paddingRight="@dimen/space_40"
+                android:paddingTop="@dimen/space_20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="237"
+                    android:textColor="@color/common_yellow"
+                    android:textSize="@dimen/xxxx_large_font" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:text="工作票总数"
+                    android:textColor="@color/common_yellow"
+                    android:textSize="@dimen/title_font" />
+
+            </LinearLayout>
+            <!--已完成-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/space_20"
+                android:paddingRight="@dimen/space_20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="已完成"
+                    android:textColor="@color/common_yellow"
+                    android:textSize="@dimen/title_font" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="200"
+                    android:textColor="@color/common_yellow"
+                    android:textSize="@dimen/xxx_large_font" />
+
+            </LinearLayout>
+            <!--未完成-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_20"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/space_20"
+                android:paddingRight="@dimen/space_20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="未完成"
+                    android:textColor="@color/common_yellow"
+                    android:textSize="@dimen/title_font" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="37"
+                    android:textColor="@color/common_yellow"
+                    android:textSize="@dimen/xxx_large_font" />
+
+            </LinearLayout>
+            <!--作废-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_20"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/space_20"
+                android:paddingRight="@dimen/space_20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="作废"
+                    android:textColor="@color/light_gray"
+                    android:textSize="@dimen/title_font" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="0"
+                    android:textColor="@color/light_gray"
+                    android:textSize="@dimen/xxx_large_font" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--第三种工作票-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:elevation="@dimen/space_5"
+            android:orientation="vertical">
+
+            <!--标题-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_50"
+                android:background="@color/common_green"
+                android:gravity="center"
+                android:text="第三种工作票"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_font" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/space_40"
+                android:paddingRight="@dimen/space_40"
+                android:paddingTop="@dimen/space_20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="237"
+                    android:textColor="@color/common_green"
+                    android:textSize="@dimen/xxxx_large_font" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:text="工作票总数"
+                    android:textColor="@color/common_green"
+                    android:textSize="@dimen/title_font" />
+
+            </LinearLayout>
+            <!--已完成-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/space_20"
+                android:paddingRight="@dimen/space_20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="已完成"
+                    android:textColor="@color/common_green"
+                    android:textSize="@dimen/title_font" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="200"
+                    android:textColor="@color/common_green"
+                    android:textSize="@dimen/xxx_large_font" />
+
+            </LinearLayout>
+            <!--未完成-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_20"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/space_20"
+                android:paddingRight="@dimen/space_20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="未完成"
+                    android:textColor="@color/common_green"
+                    android:textSize="@dimen/title_font" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="37"
+                    android:textColor="@color/common_green"
+                    android:textSize="@dimen/xxx_large_font" />
+
+            </LinearLayout>
+            <!--作废-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_20"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/space_20"
+                android:paddingRight="@dimen/space_20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="作废"
+                    android:textColor="@color/light_gray"
+                    android:textSize="@dimen/title_font" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="0"
+                    android:textColor="@color/light_gray"
+                    android:textSize="@dimen/xxx_large_font" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -9,4 +9,8 @@
     <color name="common_green">#29ECBC</color>
     <color name="common_yellow">#FC8657</color>
     <color name="black">#000</color>
+    <color name="light_black">#333</color>
+    <color name="gray">#666</color>
+    <color name="light_gray">#999</color>
+    <color name="filter_bg">#E8EFF5</color>
 </resources>

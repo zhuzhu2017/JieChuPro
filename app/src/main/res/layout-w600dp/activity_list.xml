@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <!--标题栏-->
+    <include layout="@layout/layout_header_title" />
+    <!--顶部搜索布局-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/filter_bg"
+        android:paddingBottom="@dimen/space_10"
+        android:paddingLeft="@dimen/space_20"
+        android:paddingRight="@dimen/space_20"
+        android:paddingTop="@dimen/space_10">
+
+        <!--搜索框-->
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="@dimen/space_40"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shape_oval_solid_white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/space_5"
+            android:paddingLeft="@dimen/space_20"
+            android:paddingRight="@dimen/space_20"
+            android:paddingTop="@dimen/space_5">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="作业内容 / 地点 / 领导人 /..."
+                android:textColorHint="@color/light_gray"
+                android:textSize="@dimen/common_font" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_10"
+                android:src="@mipmap/icon_search" />
+
+        </LinearLayout>
+        <!--刷新按钮-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shape_four_corner_blue"
+            android:padding="@dimen/space_10">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_refresh" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <!--表格第一行标题-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/common_gray"
+        android:orientation="vertical">
+
+        <!--横线-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_1ittle"
+            android:background="@color/light_gray" />
+        <!--标题菜单-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_50"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/piao_list_title_style"
+                android:layout_weight="1"
+                android:text="@string/xuhao" />
+            <!--分割线-->
+            <View
+                android:layout_width="@dimen/space_1ittle"
+                android:layout_height="match_parent"
+                android:background="@color/light_gray" />
+
+            <TextView
+                style="@style/piao_list_title_style"
+                android:layout_weight="1"
+                android:text="@string/piaohao" />
+            <!--分割线-->
+            <View
+                android:layout_width="@dimen/space_1ittle"
+                android:layout_height="match_parent"
+                android:background="@color/light_gray" />
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/piao_list_title_style"
+                android:layout_weight="1.5"
+                android:text="@string/gongqu" />
+            <!--分割线-->
+            <View
+                android:layout_width="@dimen/space_1ittle"
+                android:layout_height="match_parent"
+                android:background="@color/light_gray" />
+
+            <TextView
+                style="@style/piao_list_title_style"
+                android:layout_weight="1.5"
+                android:text="@string/work_location" />
+            <!--分割线-->
+            <View
+                android:layout_width="@dimen/space_1ittle"
+                android:layout_height="match_parent"
+                android:background="@color/light_gray" />
+
+            <TextView
+                style="@style/piao_list_title_style"
+                android:layout_weight="1.5"
+                android:text="@string/work_content" />
+            <!--分割线-->
+            <View
+                android:layout_width="@dimen/space_1ittle"
+                android:layout_height="match_parent"
+                android:background="@color/light_gray" />
+
+            <TextView
+                style="@style/piao_list_title_style"
+                android:layout_weight="1"
+                android:text="@string/location_type" />
+            <!--分割线-->
+            <View
+                android:layout_width="@dimen/space_1ittle"
+                android:layout_height="match_parent"
+                android:background="@color/light_gray" />
+
+            <TextView
+                style="@style/piao_list_title_style"
+                android:layout_weight="1"
+                android:text="@string/fpr" />
+            <!--分割线-->
+            <View
+                android:layout_width="@dimen/space_1ittle"
+                android:layout_height="match_parent"
+                android:background="@color/light_gray" />
+
+            <TextView
+                style="@style/piao_list_title_style"
+                android:layout_weight="1.5"
+                android:text="@string/fprq" />
+            <!--分割线-->
+            <View
+                android:layout_width="@dimen/space_1ittle"
+                android:layout_height="match_parent"
+                android:background="@color/light_gray" />
+
+            <TextView
+                style="@style/piao_list_title_style"
+                android:layout_weight="1"
+                android:text="@string/yxq" />
+            <!--分割线-->
+            <View
+                android:layout_width="@dimen/space_1ittle"
+                android:layout_height="match_parent"
+                android:background="@color/light_gray" />
+
+            <TextView
+                style="@style/piao_list_title_style"
+                android:layout_weight="1"
+                android:text="@string/state" />
+            <!--分割线-->
+            <View
+                android:layout_width="@dimen/space_1ittle"
+                android:layout_height="match_parent"
+                android:background="@color/light_gray" />
+
+            <TextView
+                style="@style/piao_list_title_style"
+                android:layout_weight="1"
+                android:text="@string/leader" />
+
+        </LinearLayout>
+        <!--横线-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_1ittle"
+            android:background="@color/light_gray" />
+
+    </LinearLayout>
+    <!--列表-->
+    <ListView
+        android:id="@+id/lv_piao"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

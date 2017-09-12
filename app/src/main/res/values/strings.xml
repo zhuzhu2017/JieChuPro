@@ -6,4 +6,15 @@
     <string name="pwd_string">请输入密码</string>
     <string name="ip_string">1.192.90.115:9922</string>
     <string name="filter_string">条件筛选：</string>
+    <string name="xuhao">序号</string>
+    <string name="piaohao">票号</string>
+    <string name="gongqu">工区</string>
+    <string name="work_location">作业地点</string>
+    <string name="work_content">作业内容</string>
+    <string name="location_type">地点类型</string>
+    <string name="fpr">发票人</string>
+    <string name="fprq">发票日期</string>
+    <string name="yxq">有效期</string>
+    <string name="state">状态</string>
+    <string name="leader">领导人</string>
 </resources>

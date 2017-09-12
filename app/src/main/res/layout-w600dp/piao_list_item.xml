@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <!--表格布局-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_50"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/piao_list_title_style"
+            android:layout_weight="1"
+            android:text="" />
+        <!--分割线-->
+        <View
+            android:layout_width="@dimen/space_1ittle"
+            android:layout_height="match_parent"
+            android:background="@color/light_gray" />
+
+        <TextView
+            style="@style/piao_list_title_style"
+            android:layout_weight="1"
+            android:text="" />
+        <!--分割线-->
+        <View
+            android:layout_width="@dimen/space_1ittle"
+            android:layout_height="match_parent"
+            android:background="@color/light_gray" />
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/piao_list_title_style"
+            android:layout_weight="1.5"
+            android:text="" />
+        <!--分割线-->
+        <View
+            android:layout_width="@dimen/space_1ittle"
+            android:layout_height="match_parent"
+            android:background="@color/light_gray" />
+
+        <TextView
+            style="@style/piao_list_title_style"
+            android:layout_weight="1.5"
+            android:text="" />
+        <!--分割线-->
+        <View
+            android:layout_width="@dimen/space_1ittle"
+            android:layout_height="match_parent"
+            android:background="@color/light_gray" />
+
+        <TextView
+            style="@style/piao_list_title_style"
+            android:layout_weight="1.5"
+            android:text="" />
+        <!--分割线-->
+        <View
+            android:layout_width="@dimen/space_1ittle"
+            android:layout_height="match_parent"
+            android:background="@color/light_gray" />
+
+        <TextView
+            style="@style/piao_list_title_style"
+            android:layout_weight="1"
+            android:text="" />
+        <!--分割线-->
+        <View
+            android:layout_width="@dimen/space_1ittle"
+            android:layout_height="match_parent"
+            android:background="@color/light_gray" />
+
+        <TextView
+            style="@style/piao_list_title_style"
+            android:layout_weight="1"
+            android:text="" />
+        <!--分割线-->
+        <View
+            android:layout_width="@dimen/space_1ittle"
+            android:layout_height="match_parent"
+            android:background="@color/light_gray" />
+
+        <TextView
+            style="@style/piao_list_title_style"
+            android:layout_weight="1.5"
+            android:text="" />
+        <!--分割线-->
+        <View
+            android:layout_width="@dimen/space_1ittle"
+            android:layout_height="match_parent"
+            android:background="@color/light_gray" />
+
+        <TextView
+            style="@style/piao_list_title_style"
+            android:layout_weight="1"
+            android:text="" />
+        <!--分割线-->
+        <View
+            android:layout_width="@dimen/space_1ittle"
+            android:layout_height="match_parent"
+            android:background="@color/light_gray" />
+
+        <TextView
+            style="@style/piao_list_title_style"
+            android:layout_weight="1"
+            android:text="" />
+        <!--分割线-->
+        <View
+            android:layout_width="@dimen/space_1ittle"
+            android:layout_height="match_parent"
+            android:background="@color/light_gray" />
+
+        <TextView
+            style="@style/piao_list_title_style"
+            android:layout_weight="1"
+            android:text="" />
+
+    </LinearLayout>
+    <!--分割线-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_1ittle"
+        android:background="@color/light_gray" />
+
+</LinearLayout>
