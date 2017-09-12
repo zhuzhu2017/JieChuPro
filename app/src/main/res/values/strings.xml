@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">洛阳供电段接触网检修风险管理系统</string>
-    <string name="app_short_name">检修风险管理</string>
+    <string name="app_long_name">洛阳供电段接触网检修风险管理系统</string>
+    <string name="app_name">检修风险管理</string>
     <string name="login_string">洛阳供电段\n接触网检修风险管理系统</string>
     <string name="account_string">请输入账号</string>
     <string name="pwd_string">请输入密码</string>
-    <string name="ip_string">1.192.90.115:9922</string>
+    <string name="ip_string">1.192.90.115:9923</string>
     <string name="filter_string">条件筛选：</string>
     <string name="xuhao">序号</string>
     <string name="piaohao">票号</string>
