@@ -11,11 +11,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jiechu.jiechupro.BaseActivity;
+import com.jiechu.jiechupro.Constants;
 import com.jiechu.jiechupro.R;
 import com.jiechu.jiechupro.net.HttpManager;
 import com.jiechu.jiechupro.net.HttpOnNextListener;
 import com.jiechu.jiechupro.net.api.LoginApi;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import butterknife.BindView;
@@ -70,6 +72,25 @@ public class LoginActivity extends BaseActivity {
         @Override
         public void onNext(JSONObject jsonObject) {
             Log.d("登陆", "==请求成功返回==" + jsonObject);
+            if (jsonObject != null) {
+                try {
+                    String state = jsonObject.getString("state");
+                    Toast.makeText(LoginActivity.this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                    if (TextUtils.equals(state, Constants.REQUEST_SUCCESS)) {
+                        //跳转到主页面
+                        openActivity(MainActivity.class);
+                        finish();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        @Override
+        public void onError(Throwable e) {
+            super.onError(e);
+            Toast.makeText(LoginActivity.this, "登录异常，请重试", Toast.LENGTH_SHORT).show();
         }
     };
 

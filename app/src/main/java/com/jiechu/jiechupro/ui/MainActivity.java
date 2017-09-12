@@ -36,10 +36,12 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         //设置布局管理器
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        lvLine.setLayoutManager(layoutManager);
-        lvPlant.setLayoutManager(layoutManager);
-        lvWorkstation.setLayoutManager(layoutManager);
+        LinearLayoutManager lvLineLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager lvPlantLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager lvWorkstationLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        lvLine.setLayoutManager(lvLineLayoutManager);
+        lvPlant.setLayoutManager(lvPlantLayoutManager);
+        lvWorkstation.setLayoutManager(lvWorkstationLayoutManager);
         //初始化数据
         initData();
     }

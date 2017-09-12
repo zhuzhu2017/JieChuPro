@@ -22,7 +22,4 @@ public interface HttpPostService {
     @POST("CheckLogin")
     Observable<JSONObject> login(@Body JSONObject object);
 
-    @POST("CheckLogin")
-    Call<JSONObject> loginTest(@Body JSONObject object);
-
 }

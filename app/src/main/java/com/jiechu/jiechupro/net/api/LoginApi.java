@@ -1,6 +1,6 @@
 package com.jiechu.jiechupro.net.api;
 
-import com.jiechu.jiechupro.JieChuApp;
+import com.jiechu.jiechupro.Constants;
 import com.jiechu.jiechupro.net.BaseApi;
 import com.jiechu.jiechupro.net.HttpOnNextListener;
 import com.jiechu.jiechupro.net.HttpPostService;
@@ -41,7 +41,7 @@ public class LoginApi extends BaseApi {
         super(listener, rxAppCompatActivity);
         setShowProgress(true);
         setCanCancelProgress(true);
-        setBaseUrl(JieChuApp.BASE_URL);
+        setBaseUrl(Constants.BASE_URL);
         setConnTimeout(10);
     }
 
