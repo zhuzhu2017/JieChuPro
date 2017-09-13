@@ -2,13 +2,430 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="第五"
-        android:textSize="@dimen/xxxx_large_font" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--顶部布局-->
+            <include layout="@layout/layout_frag_top" />
+            <!--详情布局-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/space_30"
+                android:paddingRight="@dimen/space_30">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/piao_details_title"
+                            android:text="驻站联络员姓名：" />
+
+                        <TextView style="@style/piao_details_des" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/piao_details_title"
+                            android:text="日期：" />
+
+                        <TextView style="@style/piao_details_des" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+                <!--“运统46”草拟稿上行-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/space_10"
+                    android:text="“运统46”草拟稿上行"
+                    android:textColor="@color/light_black"
+                    android:textSize="@dimen/xx_large_font" />
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+                <!--登记-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/space_10">
+
+                    <TextView
+                        style="@style/piao_details_title"
+                        android:text="登记：" />
+
+                    <TextView style="@style/piao_details_des" />
+
+                </LinearLayout>
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+                <!--销记-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/space_10">
+
+                    <TextView
+                        style="@style/piao_details_title"
+                        android:text="销记：" />
+
+                    <TextView style="@style/piao_details_des" />
+
+                </LinearLayout>
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+                <!--施工负责人签字-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/space_10">
+
+                    <TextView
+                        style="@style/piao_details_title"
+                        android:text="施工负责人签字：" />
+
+                    <TextView style="@style/piao_details_des" />
+
+                </LinearLayout>
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+                <!--停止上道作业行车防护“三率”统计-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/space_10"
+                    android:text="停止上道作业行车防护“三率”统计"
+                    android:textColor="@color/light_black"
+                    android:textSize="@dimen/xx_large_font" />
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/space_10">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/piao_details_title"
+                            android:text="防护登记作业次数：" />
+
+                        <TextView style="@style/piao_details_des" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/piao_details_title"
+                            android:text="实际预告列车次数：" />
+
+                        <TextView style="@style/piao_details_des" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/space_10">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/piao_details_title"
+                            android:text="提前10分钟下道次数：" />
+
+                        <TextView style="@style/piao_details_des" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/piao_details_title"
+                            android:text="实际上道作业次数：" />
+
+                        <TextView style="@style/piao_details_des" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/space_10">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/piao_details_title"
+                            android:text="通过本线（邻线）\n列车次数：" />
+
+                        <TextView style="@style/piao_details_des" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/piao_details_title"
+                            android:text="通过作业地点关键\n列车次数：" />
+
+                        <TextView style="@style/piao_details_des" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+                <!--其他上道作业行车防护“三率”统计-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/space_10"
+                    android:text="其他上道作业行车防护“三率”统计"
+                    android:textColor="@color/light_black"
+                    android:textSize="@dimen/xx_large_font" />
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/space_10">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/piao_details_title"
+                            android:text="防护登记作业次数：" />
+
+                        <TextView style="@style/piao_details_des" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/piao_details_title"
+                            android:text="实际预告列车次数：" />
+
+                        <TextView style="@style/piao_details_des" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/space_10">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/piao_details_title"
+                            android:text="提前10分钟下道次数：" />
+
+                        <TextView style="@style/piao_details_des" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/piao_details_title"
+                            android:text="实际上道作业次数：" />
+
+                        <TextView style="@style/piao_details_des" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/space_10">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/piao_details_title"
+                            android:text="通过本线（邻线）\n列车次数：" />
+
+                        <TextView style="@style/piao_details_des" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/piao_details_title"
+                            android:text="通过作业地点关键\n列车次数：" />
+
+                        <TextView style="@style/piao_details_des" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginBottom="@dimen/space_50"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

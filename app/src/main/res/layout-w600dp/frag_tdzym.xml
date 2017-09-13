@@ -2,13 +2,216 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="第四"
-        android:textSize="@dimen/xxxx_large_font" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--顶部布局-->
+            <include layout="@layout/layout_frag_top" />
+            <!--详情布局-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/space_30"
+                android:paddingRight="@dimen/space_30">
+
+                <!--第一行-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/piao_details_title"
+                        android:text="命令编号：" />
+
+                    <TextView style="@style/piao_details_des" />
+
+                </LinearLayout>
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+                <!--批准时间-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/space_10">
+
+                    <TextView
+                        style="@style/piao_details_title"
+                        android:text="批准时间：" />
+
+                    <TextView style="@style/piao_details_des" />
+
+                </LinearLayout>
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+                <!--命令内容-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/space_10">
+
+                    <TextView
+                        style="@style/piao_details_title"
+                        android:text="命令内容：" />
+
+                    <TextView style="@style/piao_details_des" />
+
+                </LinearLayout>
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+                <!--要求完成时间-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/space_10">
+
+                    <TextView
+                        style="@style/piao_details_title"
+                        android:text="要求完成时间：" />
+
+                    <TextView style="@style/piao_details_des" />
+
+                </LinearLayout>
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+                <!--发令受令-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/space_10">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/piao_details_title"
+                            android:text="发令人：" />
+
+                        <TextView style="@style/piao_details_des" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/piao_details_title"
+                            android:text="受令人：" />
+
+                        <TextView style="@style/piao_details_des" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+                <!--消令时间-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/space_10">
+
+                    <TextView
+                        style="@style/piao_details_title"
+                        android:text="消令时间：" />
+
+                    <TextView style="@style/piao_details_des" />
+
+                </LinearLayout>
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+                <!--消令人-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/space_10">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/piao_details_title"
+                            android:text="消令人：" />
+
+                        <TextView style="@style/piao_details_des" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/piao_details_title"
+                            android:text="供电调度员：" />
+
+                        <TextView style="@style/piao_details_des" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginBottom="@dimen/space_50"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

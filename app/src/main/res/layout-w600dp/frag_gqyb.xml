@@ -2,12 +2,263 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="第三"
-        android:textSize="@dimen/xxxx_large_font" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--顶部布局-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/space_20"
+                android:text="第一种工作票"
+                android:textColor="@color/light_black"
+                android:textSize="@dimen/common_font" />
+            <!--分割线-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_2"
+                android:layout_marginLeft="@dimen/space_15"
+                android:layout_marginRight="@dimen/space_15"
+                android:background="@color/light_black" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/space_10"
+                android:paddingLeft="@dimen/space_30"
+                android:paddingRight="@dimen/space_30"
+                android:paddingTop="@dimen/space_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="洛阳网工区"
+                    android:textColor="@color/light_black"
+                    android:textSize="@dimen/common_font" />
+
+                <TextView
+                    android:id="@+id/tv_piao_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="第 08-100 号"
+                    android:textColor="@color/light_black"
+                    android:textSize="@dimen/common_font" />
+
+            </FrameLayout>
+            <!--分割线-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_1ittle"
+                android:layout_marginLeft="@dimen/space_30"
+                android:layout_marginRight="@dimen/space_30"
+                android:background="@color/common_gray" />
+            <!--详情布局-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/space_30"
+                android:paddingRight="@dimen/space_30"
+                android:paddingTop="@dimen/space_10">
+                <!--工前预想-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="工前预想"
+                    android:textColor="@color/light_black"
+                    android:textSize="@dimen/xx_large_font" />
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+
+                <TextView style="@style/simple_des" />
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+                <!--分工记录-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/space_10"
+                    android:text="分工记录"
+                    android:textColor="@color/light_black"
+                    android:textSize="@dimen/xx_large_font" />
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+
+                <TextView style="@style/simple_des" />
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+                <!--收工记录-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/space_10"
+                    android:text="收工记录"
+                    android:textColor="@color/light_black"
+                    android:textSize="@dimen/xx_large_font" />
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/space_10">
+
+                    <TextView
+                        style="@style/piao_details_title"
+                        android:text="任务来源：" />
+
+                    <TextView style="@style/piao_details_des" />
+
+                </LinearLayout>
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/space_10">
+
+                    <TextView
+                        style="@style/piao_details_title"
+                        android:text="收工记录：" />
+
+                    <TextView style="@style/piao_details_des" />
+
+                </LinearLayout>
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/space_10">
+
+                    <TextView
+                        style="@style/piao_details_title"
+                        android:text="其他：" />
+
+                    <TextView style="@style/piao_details_des" />
+
+                </LinearLayout>
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/space_10">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/piao_details_title"
+                            android:text="行调命令：" />
+
+                        <TextView style="@style/piao_details_des" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/piao_details_title"
+                            android:text="行调命令号：" />
+
+                        <TextView style="@style/piao_details_des" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/space_10">
+
+                    <TextView
+                        style="@style/piao_details_title"
+                        android:text="工作领导人：" />
+
+                    <TextView style="@style/piao_details_des" />
+
+                </LinearLayout>
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1ittle"
+                    android:layout_marginBottom="@dimen/space_50"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@color/common_gray" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
 </LinearLayout>
