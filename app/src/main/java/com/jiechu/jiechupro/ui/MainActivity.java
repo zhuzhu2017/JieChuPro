@@ -170,10 +170,10 @@ public class MainActivity extends BaseActivity {
                                         wsAdapter.updataList(workstationList);
                                         String wname = workstationBean.getWname();
                                         if (TextUtils.equals(wname, "洛阳网工区")) {
-                                            //选中条目直接跳转,并将工区名称传递过去
-                                            Bundle bundle = new Bundle();
-                                            bundle.putString("workstation", workstationBean.getWname());
-                                            openActivity(PiaoListActivity.class, bundle);
+                                            //选中条目直接跳转
+//                                            Bundle bundle = new Bundle();
+//                                            bundle.putString("workstation", workstationBean.getWname());
+                                            openActivity(TongJiActivity.class);
                                         } else {
                                             Toast.makeText(MainActivity.this, "暂无数据", Toast.LENGTH_SHORT).show();
                                         }

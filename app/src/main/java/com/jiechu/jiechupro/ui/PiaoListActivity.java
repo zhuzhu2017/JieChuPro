@@ -44,7 +44,7 @@ public class PiaoListActivity extends BaseActivity {
         ButterKnife.bind(this);
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            searchWord = bundle.getString("workstation");
+            searchWord = bundle.getString("search_word");
         }
     }
 

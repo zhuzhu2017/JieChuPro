@@ -20,6 +20,7 @@
 
         <!--第一种工作票-->
         <LinearLayout
+            android:id="@+id/ll_piao01"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -47,9 +48,10 @@
                 android:paddingTop="@dimen/space_20">
 
                 <TextView
+                    android:id="@+id/tv_piao01_total_num"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="237"
+                    android:text="0"
                     android:textColor="@color/common_blue"
                     android:textSize="@dimen/xxxx_large_font" />
 
@@ -78,11 +80,12 @@
                     android:textSize="@dimen/title_font" />
 
                 <TextView
+                    android:id="@+id/tv_piao01_finished"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:text="200"
+                    android:text="0"
                     android:textColor="@color/common_blue"
                     android:textSize="@dimen/xxx_large_font" />
 
@@ -104,11 +107,12 @@
                     android:textSize="@dimen/title_font" />
 
                 <TextView
+                    android:id="@+id/tv_piao01_unfinished"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:text="37"
+                    android:text="0"
                     android:textColor="@color/common_blue"
                     android:textSize="@dimen/xxx_large_font" />
 
@@ -130,6 +134,7 @@
                     android:textSize="@dimen/title_font" />
 
                 <TextView
+                    android:id="@+id/tv_piao01_zuofei"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -144,6 +149,7 @@
 
         <!--第二种工作票-->
         <LinearLayout
+            android:id="@+id/ll_piao02"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/space_25"
@@ -173,9 +179,10 @@
                 android:paddingTop="@dimen/space_20">
 
                 <TextView
+                    android:id="@+id/tv_piao02_total_num"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="237"
+                    android:text="0"
                     android:textColor="@color/common_yellow"
                     android:textSize="@dimen/xxxx_large_font" />
 
@@ -204,11 +211,12 @@
                     android:textSize="@dimen/title_font" />
 
                 <TextView
+                    android:id="@+id/tv_piao02_finished"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:text="200"
+                    android:text="0"
                     android:textColor="@color/common_yellow"
                     android:textSize="@dimen/xxx_large_font" />
 
@@ -230,11 +238,12 @@
                     android:textSize="@dimen/title_font" />
 
                 <TextView
+                    android:id="@+id/tv_piao02_unfinished"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:text="37"
+                    android:text="0"
                     android:textColor="@color/common_yellow"
                     android:textSize="@dimen/xxx_large_font" />
 
@@ -256,6 +265,7 @@
                     android:textSize="@dimen/title_font" />
 
                 <TextView
+                    android:id="@+id/tv_piao02_zuofei"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -270,6 +280,7 @@
 
         <!--第三种工作票-->
         <LinearLayout
+            android:id="@+id/ll_piao03"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -297,9 +308,10 @@
                 android:paddingTop="@dimen/space_20">
 
                 <TextView
+                    android:id="@+id/tv_piao03_total_num"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="237"
+                    android:text="0"
                     android:textColor="@color/common_green"
                     android:textSize="@dimen/xxxx_large_font" />
 
@@ -328,11 +340,12 @@
                     android:textSize="@dimen/title_font" />
 
                 <TextView
+                    android:id="@+id/tv_piao03_finished"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:text="200"
+                    android:text="0"
                     android:textColor="@color/common_green"
                     android:textSize="@dimen/xxx_large_font" />
 
@@ -354,11 +367,12 @@
                     android:textSize="@dimen/title_font" />
 
                 <TextView
+                    android:id="@+id/tv_piao03_unfinished"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:text="37"
+                    android:text="0"
                     android:textColor="@color/common_green"
                     android:textSize="@dimen/xxx_large_font" />
 
@@ -380,6 +394,7 @@
                     android:textSize="@dimen/title_font" />
 
                 <TextView
+                    android:id="@+id/tv_piao03_zuofei"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

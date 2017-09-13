@@ -22,4 +22,15 @@ public interface HttpPostService {
     @POST("CheckLogin")
     Observable<JSONObject> login(@Body JSONObject object);
 
+    /**
+     * 工作票统计
+     * @param object
+     * @return
+     */
+    @POST("GetTop8GridJson")
+    Observable<JSONObject> tongJi(@Body JSONObject object);
+
+    @POST("GetTop8GridJson")
+    Call<JSONObject> tongJiTest(@Body JSONObject object);
+
 }
