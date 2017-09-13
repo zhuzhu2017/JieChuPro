@@ -19,6 +19,15 @@ public class PiaoListBean implements Serializable {
     private String yxq; //有效期
     private String zt;  //状态
     private String ldr; //领导人
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getXh() {
         return xh;

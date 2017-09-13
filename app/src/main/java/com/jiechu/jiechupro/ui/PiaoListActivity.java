@@ -17,6 +17,7 @@ import com.jiechu.jiechupro.net.HttpManager;
 import com.jiechu.jiechupro.net.HttpOnNextListener;
 import com.jiechu.jiechupro.net.api.PiaoListApi;
 import com.jiechu.jiechupro.view.recyclerview.AutoLoad.AutoLoadRecyclerView;
+import com.jiechu.jiechupro.view.recyclerview.HeaderAndFooter.OnItemClickListener;
 import com.jiechu.jiechupro.view.recyclerview.LayoutManager.WZMLinearLayoutManager;
 
 import org.json.JSONArray;
@@ -139,6 +140,7 @@ public class PiaoListActivity extends BaseActivity {
                                     listBean.setZt(itemObject.getString("zt_desc") + "");
                                     listBean.setZydd(itemObject.getString("zydd") + "");
                                     listBean.setZynr(itemObject.getString("zynr") + "");
+                                    listBean.setId(itemObject.getString("id") + "");
                                     piaoList.add(listBean);
                                 }
                             }
@@ -168,6 +170,7 @@ public class PiaoListActivity extends BaseActivity {
                                     listBean.setZt(itemObject.getString("zt_desc") + "");
                                     listBean.setZydd(itemObject.getString("zydd") + "");
                                     listBean.setZynr(itemObject.getString("zynr") + "");
+                                    listBean.setId(itemObject.getString("id") + "");
                                     piaoList.add(listBean);
                                 }
                             }
@@ -192,6 +195,14 @@ public class PiaoListActivity extends BaseActivity {
         } else {
             adapter.updateList(piaoList);
         }
+        lvPiao.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void OnItemClick(int position) {
+                Bundle bundle = new Bundle();
+                bundle.putString("id", piaoList.get(position).getId());
+                openActivity(PiaoListDetailsActivity.class, bundle);
+            }
+        });
     }
 
     @OnClick({R.id.iv_header_back, R.id.iv_search, R.id.ll_refresh})
