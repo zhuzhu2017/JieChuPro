@@ -15,6 +15,7 @@ import com.jiechu.jiechupro.R;
 import com.jiechu.jiechupro.net.HttpManager;
 import com.jiechu.jiechupro.net.HttpOnNextListener;
 import com.jiechu.jiechupro.net.api.PiaoListApi;
+import com.jiechu.jiechupro.view.recyclerview.AutoLoad.AutoLoadRecyclerView;
 
 import org.json.JSONObject;
 
@@ -40,7 +41,7 @@ public class PiaoListActivity extends BaseActivity {
     @BindView(R.id.ll_refresh)
     LinearLayout llRefresh;
     @BindView(R.id.lv_piao)
-    ListView lvPiao;
+    AutoLoadRecyclerView lvPiao;
 
     private String searchWord;  //搜索词
     private int page = 1;   //当前页

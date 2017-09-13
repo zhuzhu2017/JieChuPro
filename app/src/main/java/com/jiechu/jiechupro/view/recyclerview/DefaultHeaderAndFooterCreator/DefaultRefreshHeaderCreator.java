@@ -59,9 +59,9 @@ public class DefaultRefreshHeaderCreator extends RefreshHeaderCreator {
 
     @Override
     public View getRefreshView(Context context, RecyclerView recyclerView) {
-        mRefreshView = LayoutInflater.from(context).inflate(R.layout.layout_swipe_header, recyclerView, false);
-        progressWheel = (ProgressWheel) mRefreshView.findViewById(R.id.progressbar);
-        tv = (TextView) mRefreshView.findViewById(R.id.tvRefresh);
+        mRefreshView = LayoutInflater.from(context).inflate(R.layout.layout_ptr_ptl, recyclerView, false);
+        progressWheel = (ProgressWheel) mRefreshView.findViewById(R.id.iv);
+        tv = (TextView) mRefreshView.findViewById(R.id.tv);
         return mRefreshView;
     }
 

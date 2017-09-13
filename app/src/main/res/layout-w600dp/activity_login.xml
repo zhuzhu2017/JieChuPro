@@ -53,6 +53,7 @@
                 android:background="@drawable/shape_four_corner_grey"
                 android:gravity="center"
                 android:hint="@string/pwd_string"
+                android:inputType="textPassword"
                 android:textColorHint="@color/white"
                 android:textSize="@dimen/common_font" />
 
