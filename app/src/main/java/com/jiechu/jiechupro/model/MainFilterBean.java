@@ -26,6 +26,15 @@ public class MainFilterBean {
 
         private String lname;
         private List<PlantsBean> plants;
+        private boolean isLineSelected;
+
+        public boolean isLineSelected() {
+            return isLineSelected;
+        }
+
+        public void setLineSelected(boolean lineSelected) {
+            isLineSelected = lineSelected;
+        }
 
         public String getLname() {
             return lname;
@@ -51,6 +60,15 @@ public class MainFilterBean {
 
             private String pname;
             private List<WorkstationBean> workstation;
+            private boolean isPlantsSelected;
+
+            public boolean isPlantsSelected() {
+                return isPlantsSelected;
+            }
+
+            public void setPlantsSelected(boolean plantsSelected) {
+                isPlantsSelected = plantsSelected;
+            }
 
             public String getPname() {
                 return pname;
@@ -76,6 +94,15 @@ public class MainFilterBean {
 
                 private String id;
                 private String wname;
+                private boolean isWTSelected;
+
+                public boolean isWTSelected() {
+                    return isWTSelected;
+                }
+
+                public void setWTSelected(boolean WTSelected) {
+                    isWTSelected = WTSelected;
+                }
 
                 public String getId() {
                     return id;

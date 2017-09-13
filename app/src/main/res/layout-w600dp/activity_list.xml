@@ -26,10 +26,10 @@
             android:orientation="horizontal"
             android:paddingBottom="@dimen/space_5"
             android:paddingLeft="@dimen/space_20"
-            android:paddingRight="@dimen/space_20"
             android:paddingTop="@dimen/space_5">
 
             <EditText
+                android:id="@+id/et_search"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -39,14 +39,17 @@
                 android:textSize="@dimen/common_font" />
 
             <ImageView
+                android:id="@+id/iv_search"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/space_10"
+                android:paddingLeft="@dimen/space_10"
+                android:paddingRight="@dimen/space_20"
                 android:src="@mipmap/icon_search" />
 
         </LinearLayout>
         <!--刷新按钮-->
         <LinearLayout
+            android:id="@+id/ll_refresh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -101,7 +104,6 @@
                 android:background="@color/light_gray" />
 
             <TextView
-                android:id="@+id/textView"
                 style="@style/piao_list_title_style"
                 android:layout_weight="1.5"
                 android:text="@string/gongqu" />

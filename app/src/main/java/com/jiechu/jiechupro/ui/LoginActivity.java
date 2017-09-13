@@ -50,28 +50,30 @@ public class LoginActivity extends BaseActivity {
 
     @OnClick(R.id.tv_login)
     public void onViewClicked() {
-        String username = etUsername.getText().toString().trim();
-        String password = etPassword.getText().toString().trim();
-        if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
-            if (TextUtils.isEmpty(username)) {
-                Toast.makeText(this, "请输入用户名", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "请输入密码", Toast.LENGTH_SHORT).show();
-            }
-        } else {
-            //开启登陆
-            LoginApi loginApi = new LoginApi(loginResultListener, this);
-            loginApi.setUsername(username);
-            loginApi.setPassword(password);
-            HttpManager.getInstance().connToServer(loginApi);
-        }
+        //跳转到主页面
+        openActivity(MainActivity.class);
+        finish();
+//        String username = etUsername.getText().toString().trim();
+//        String password = etPassword.getText().toString().trim();
+//        if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
+//            if (TextUtils.isEmpty(username)) {
+//                Toast.makeText(this, "请输入用户名", Toast.LENGTH_SHORT).show();
+//            } else {
+//                Toast.makeText(this, "请输入密码", Toast.LENGTH_SHORT).show();
+//            }
+//        } else {
+//            //开启登陆
+//            LoginApi loginApi = new LoginApi(loginResultListener, this);
+//            loginApi.setUsername(username);
+//            loginApi.setPassword(password);
+//            HttpManager.getInstance().connToServer(loginApi);
+//        }
     }
 
     HttpOnNextListener loginResultListener = new HttpOnNextListener<JSONObject>() {
 
         @Override
         public void onNext(JSONObject jsonObject) {
-            Log.d("登陆", "==请求成功返回==" + jsonObject);
             if (jsonObject != null) {
                 try {
                     String state = jsonObject.getString("state");

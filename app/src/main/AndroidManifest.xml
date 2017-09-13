@@ -30,7 +30,8 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".ui.PiaoListActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".ui.PiaoListDetailsActivity"
             android:screenOrientation="landscape" />
