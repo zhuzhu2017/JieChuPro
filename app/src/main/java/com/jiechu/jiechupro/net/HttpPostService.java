@@ -30,7 +30,12 @@ public interface HttpPostService {
     @POST("GetTop8GridJson")
     Observable<JSONObject> tongJi(@Body JSONObject object);
 
-    @POST("GetTop8GridJson")
-    Call<JSONObject> tongJiTest(@Body JSONObject object);
+    /**
+     * 获取第一种工作票列表
+     * @param object
+     * @return
+     */
+    @POST("GetdyzgzpGridJsontosearch")
+    Observable<JSONObject> piaoList(@Body JSONObject object);
 
 }

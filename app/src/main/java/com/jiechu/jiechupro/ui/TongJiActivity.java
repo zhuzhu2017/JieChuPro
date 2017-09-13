@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.jiechu.jiechupro.BaseActivity;
 import com.jiechu.jiechupro.R;
@@ -130,13 +129,11 @@ public class TongJiActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.ll_piao01:
-                Bundle bundle = new Bundle();
-                bundle.putString("search_word", "第一种工作票");
-                openActivity(PiaoListActivity.class, bundle);
+                openActivity(PiaoListActivity.class);
                 break;
             case R.id.ll_piao02:
             case R.id.ll_piao03:
-                Toast.makeText(ctx, "暂无数据", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(ctx, "暂无数据", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
