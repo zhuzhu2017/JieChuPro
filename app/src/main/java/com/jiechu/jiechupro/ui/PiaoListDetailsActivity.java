@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
+import android.util.Log;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,7 +23,7 @@ import butterknife.OnClick;
  * Created by allen on 2017/9/12.
  */
 
-public class PiaoListDetailsActivity extends BaseActivity {
+public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.IOnTitleSelectedListener {
     @BindView(R.id.iv_header_back)
     ImageView ivHeaderBack;
     @BindView(R.id.tv_header_title)
@@ -65,5 +67,10 @@ public class PiaoListDetailsActivity extends BaseActivity {
     @OnClick(R.id.iv_header_back)
     public void onViewClicked() {
         finish();
+    }
+
+    @Override
+    public void onTitleSelected(View view, int position) {
+        Log.d("点击", "点击了" + position);
     }
 }

@@ -57,6 +57,8 @@ public class SwitchFrag extends Fragment {
     /**
      * 初始化数据
      */
+    private int oldPos;
+
     private void initData() {
         titleList.clear();
         for (int i = 0; i < titles.length; i++) {
@@ -81,8 +83,30 @@ public class SwitchFrag extends Fragment {
                 }
                 titleList.get(i).setSelected(true);
                 adapter.updateList(titleList);
+                if (i != oldPos) {
+                    if (onTitleSelectedListener != null) {
+                        onTitleSelectedListener.onTitleSelected(view, i);
+                    }
+                }
+                oldPos = i;
             }
         });
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            onTitleSelectedListener = (IOnTitleSelectedListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement IOnTitleSelectedListener");
+        }
+    }
+
+    private IOnTitleSelectedListener onTitleSelectedListener;
+
+    public interface IOnTitleSelectedListener {
+        void onTitleSelected(View view, int position);
     }
 
     @Override
