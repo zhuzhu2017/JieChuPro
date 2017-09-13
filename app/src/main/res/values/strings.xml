@@ -18,4 +18,5 @@
     <string name="state">状态</string>
     <string name="leader">领导人</string>
     <string name="pull_refresh">下拉刷新</string>
+    <string name="piao01">第一种工作票</string>
 </resources>

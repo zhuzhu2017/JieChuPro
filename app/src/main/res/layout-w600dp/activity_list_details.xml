@@ -12,18 +12,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!--侧滑菜单-->
-        <FrameLayout
-            android:id="@+id/drawer_content"
-            android:layout_width="@dimen/space_100"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:background="@color/white" />
         <!--内容布局-->
         <FrameLayout
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+
+        <!--侧滑菜单-->
+        <FrameLayout
+            android:id="@+id/drawer_content"
+            android:layout_width="@dimen/space_200"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/white" />
 
     </android.support.v4.widget.DrawerLayout>
 

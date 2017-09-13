@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.jiechu.jiechupro.BaseActivity;
 import com.jiechu.jiechupro.R;
+import com.jiechu.jiechupro.ui.fragment.SwitchFrag;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -46,6 +47,19 @@ public class PiaoListDetailsActivity extends BaseActivity {
         if (bundle != null) {
             id = bundle.getString("id");
         }
+        //初始化视图
+        initView();
+    }
+
+    /**
+     * 初始化视图
+     */
+    private void initView() {
+        //设置标题
+        tvHeaderTitle.setText("工作票");
+        //设置侧滑布局
+        SwitchFrag switchFrag = new SwitchFrag();
+        getSupportFragmentManager().beginTransaction().add(R.id.drawer_content, switchFrag).commit();
     }
 
     @OnClick(R.id.iv_header_back)
