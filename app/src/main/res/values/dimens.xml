@@ -3,8 +3,10 @@
     <!--间距尺寸-->
     <dimen name="space_1ittle">0.8dp</dimen>
     <dimen name="space_1">1dp</dimen>
+    <dimen name="space_2">2dp</dimen>
     <dimen name="space_5">5dp</dimen>
     <dimen name="space_10">10dp</dimen>
+    <dimen name="space_15">15dp</dimen>
     <dimen name="space_20">20dp</dimen>
     <dimen name="space_25">25dp</dimen>
     <dimen name="space_30">30dp</dimen>
@@ -19,5 +21,6 @@
     <dimen name="xxxx_large_font">50sp</dimen>
     <dimen name="xxx_large_font">25sp</dimen>
     <dimen name="title_font">20sp</dimen>
+    <dimen name="xx_large_font">17sp</dimen>
     <dimen name="common_font">15sp</dimen>
 </resources>

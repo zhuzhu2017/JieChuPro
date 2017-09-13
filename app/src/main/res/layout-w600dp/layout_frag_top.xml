@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/space_15">
+
+    <TextView
+        android:id="@+id/tv_piao_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="第一种工作票"
+        android:textColor="@color/light_black"
+        android:textSize="@dimen/common_font" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_15">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="洛阳网工区"
+            android:textColor="@color/light_black"
+            android:textSize="@dimen/common_font" />
+
+        <TextView
+            android:id="@+id/tv_piao_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="第 08-100 号"
+            android:textColor="@color/light_black"
+            android:textSize="@dimen/common_font" />
+
+    </FrameLayout>
+    <!--分割线-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_2"
+        android:layout_marginTop="@dimen/space_15"
+        android:background="@color/light_black" />
+</LinearLayout>
