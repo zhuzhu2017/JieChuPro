@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.jiechu.jiechupro.R;
 import com.jiechu.jiechupro.model.PiaoListBean;
+import com.jiechu.jiechupro.view.ItemPop;
 
 import java.util.List;
 
@@ -33,7 +34,7 @@ public class PiaoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
         if (holder instanceof ItemViewHolder) {
             PiaoListBean listBean = piaoList.get(position);
             ((ItemViewHolder) holder).tv_xh.setText((listBean.getXh() == null || listBean.getXh().equals("null")) ? "" : listBean.getXh());
@@ -47,7 +48,70 @@ public class PiaoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             ((ItemViewHolder) holder).tv_zt.setText((listBean.getZt() == null || listBean.getZt().equals("null")) ? "" : listBean.getZt());
             ((ItemViewHolder) holder).tv_zydd.setText((listBean.getZydd() == null || listBean.getZydd().equals("null")) ? "" : listBean.getZydd());
             ((ItemViewHolder) holder).tv_zynr.setText((listBean.getZynr() == null || listBean.getZynr().equals("null")) ? "" : listBean.getZynr());
+            //添加点击事件
+            if (((ItemViewHolder) holder).tv_ddlx.getText().toString().length() > 6) {
+                ((ItemViewHolder) holder).tv_ddlx.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        openPop(((ItemViewHolder) holder).tv_ddlx);
+                    }
+                });
+            }
+            if (((ItemViewHolder) holder).tv_fprq.getText().toString().length() > 6) {
+                ((ItemViewHolder) holder).tv_fprq.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        openPop(((ItemViewHolder) holder).tv_fprq);
+                    }
+                });
+            }
+            if (((ItemViewHolder) holder).tv_gq.getText().toString().length() > 6) {
+                ((ItemViewHolder) holder).tv_gq.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        openPop(((ItemViewHolder) holder).tv_gq);
+                    }
+                });
+            }
+            if (((ItemViewHolder) holder).tv_ph.getText().toString().length() > 6) {
+                ((ItemViewHolder) holder).tv_ph.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        openPop(((ItemViewHolder) holder).tv_ph);
+                    }
+                });
+            }
+            if (((ItemViewHolder) holder).tv_yxq.getText().toString().length() > 6) {
+                ((ItemViewHolder) holder).tv_yxq.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        openPop(((ItemViewHolder) holder).tv_yxq);
+                    }
+                });
+            }
+            if (((ItemViewHolder) holder).tv_zydd.getText().toString().length() > 6) {
+                ((ItemViewHolder) holder).tv_zydd.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        openPop(((ItemViewHolder) holder).tv_zydd);
+                    }
+                });
+            }
+            if (((ItemViewHolder) holder).tv_zynr.getText().toString().length() > 6) {
+                ((ItemViewHolder) holder).tv_zynr.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        openPop(((ItemViewHolder) holder).tv_zynr);
+                    }
+                });
+            }
         }
+    }
+
+    private void openPop(TextView textView) {
+        ItemPop itemPop = new ItemPop(ctx, textView.getText().toString());
+        itemPop.showAsDropDown(textView, 0, -25);
+        itemPop.backgroundAlpha(1f);
     }
 
     @Override
