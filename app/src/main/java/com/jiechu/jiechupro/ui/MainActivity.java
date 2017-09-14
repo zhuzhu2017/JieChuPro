@@ -60,6 +60,7 @@ public class MainActivity extends BaseActivity {
         lvLine.setLayoutManager(lvLineLayoutManager);
         lvPlant.setLayoutManager(lvPlantLayoutManager);
         lvWorkstation.setLayoutManager(lvWorkstationLayoutManager);
+        tvHeaderTitle.setText("首页");
         //初始化数据
         initData();
     }

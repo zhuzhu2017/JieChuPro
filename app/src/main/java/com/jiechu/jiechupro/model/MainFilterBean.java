@@ -1,12 +1,13 @@
 package com.jiechu.jiechupro.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by allen on 2017/9/11.
  */
 
-public class MainFilterBean {
+public class MainFilterBean implements Serializable {
 
     private List<LinesBean> lines;
 
@@ -18,7 +19,7 @@ public class MainFilterBean {
         this.lines = lines;
     }
 
-    public static class LinesBean {
+    public static class LinesBean implements Serializable{
         /**
          * lname : 陇海线
          * plants : [{"pname":"洛阳供电车间","workstation":[{"id":"","wname":"义马网工区"},{"id":"","wname":"新安县网工区"},{"id":"","wname":"洛阳东网工区"},{"id":"","wname":"洛阳网工区"}]},{"pname":"邓州供电车间","workstation":[]},{"pname":"三门峡供电车间","workstation":[]},{"pname":"南阳西供电车间","workstation":[]}]
@@ -52,7 +53,7 @@ public class MainFilterBean {
             this.plants = plants;
         }
 
-        public static class PlantsBean {
+        public static class PlantsBean implements Serializable{
             /**
              * pname : 洛阳供电车间
              * workstation : [{"id":"","wname":"义马网工区"},{"id":"","wname":"新安县网工区"},{"id":"","wname":"洛阳东网工区"},{"id":"","wname":"洛阳网工区"}]
@@ -86,7 +87,7 @@ public class MainFilterBean {
                 this.workstation = workstation;
             }
 
-            public static class WorkstationBean {
+            public static class WorkstationBean implements Serializable{
                 /**
                  * id :
                  * wname : 义马网工区
