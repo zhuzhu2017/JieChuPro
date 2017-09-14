@@ -8,7 +8,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jiechu.jiechupro.BaseActivity;
@@ -34,16 +33,18 @@ import butterknife.OnClick;
  */
 
 public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.IOnTitleSelectedListener {
-    @BindView(R.id.iv_header_back)
-    ImageView ivHeaderBack;
-    @BindView(R.id.tv_header_title)
-    TextView tvHeaderTitle;
     @BindView(R.id.drawer_content)
     FrameLayout drawerContent;
     @BindView(R.id.fragment_container)
     FrameLayout fragmentContainer;
     @BindView(R.id.drawer_layout)
     DrawerLayout drawerLayout;
+    @BindView(R.id.tv_menu)
+    TextView tvMenu;
+    @BindView(R.id.tv_details_header_title)
+    TextView tvDetailsHeaderTitle;
+    @BindView(R.id.tv_back)
+    TextView tvBack;
 
     private Activity ctx;
 
@@ -74,8 +75,6 @@ public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.
      * 初始化视图
      */
     private void initView() {
-        //设置标题
-        tvHeaderTitle.setText("工作票");
         //设置侧滑布局
         SwitchFrag switchFrag = new SwitchFrag();
         getSupportFragmentManager().beginTransaction().add(R.id.drawer_content, switchFrag).commit();
@@ -87,11 +86,6 @@ public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.
             fragmentTransaction.add(R.id.fragment_container, piaoDetailsFrag);
         }
         fragmentTransaction.commit();
-    }
-
-    @OnClick(R.id.iv_header_back)
-    public void onViewClicked() {
-        finish();
     }
 
     @Override
@@ -171,6 +165,18 @@ public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.
             fragmentTransaction.commit();
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    @OnClick({R.id.tv_menu, R.id.tv_back})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.tv_menu:  //打开侧滑菜单
+                drawerLayout.openDrawer(drawerContent);
+                break;
+            case R.id.tv_back:
+                finish();
+                break;
         }
     }
 }

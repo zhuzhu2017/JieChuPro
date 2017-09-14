@@ -6,14 +6,12 @@
     android:orientation="vertical">
 
     <!--标题栏-->
-    <include layout="@layout/layout_header_title" />
+    <include layout="@layout/layout_details_header_title" />
     <!--主布局，带侧滑-->
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/space_10"
-        android:layout_marginRight="@dimen/space_10">
+        android:layout_height="match_parent">
 
         <!--内容布局-->
         <FrameLayout
