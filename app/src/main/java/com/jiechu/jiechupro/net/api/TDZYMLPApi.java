@@ -1,11 +1,9 @@
 package com.jiechu.jiechupro.net.api;
 
-import android.util.Log;
-
 import com.jiechu.jiechupro.net.BaseApi;
 import com.jiechu.jiechupro.net.HttpOnNextListener;
 import com.jiechu.jiechupro.net.HttpPostService;
-import com.trello.rxlifecycle.components.support.RxFragment;
+import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -14,17 +12,12 @@ import retrofit2.Retrofit;
 import rx.Observable;
 
 /**
- * 第一种工作票详情APi
  * Created by allen on 2017/9/14.
  */
 
-public class PiaoDetailsApi extends BaseApi {
+public class TDZYMLPApi extends BaseApi {
 
     private String keyValue;
-
-    public PiaoDetailsApi(HttpOnNextListener listener, RxFragment rxFragment) {
-        super(listener, rxFragment);
-    }
 
     public String getKeyValue() {
         return keyValue;
@@ -34,6 +27,9 @@ public class PiaoDetailsApi extends BaseApi {
         this.keyValue = keyValue;
     }
 
+    public TDZYMLPApi(HttpOnNextListener listener, RxAppCompatActivity rxAppCompatActivity) {
+        super(listener, rxAppCompatActivity);
+    }
 
     @Override
     public Observable getObservable(Retrofit retrofit) {
@@ -44,8 +40,7 @@ public class PiaoDetailsApi extends BaseApi {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        Log.d("详情参数", object.toString());
-        return httpPostService.getPiaoDetails(object);
+        return httpPostService.getTDZYPData(object);
     }
 
     @Override

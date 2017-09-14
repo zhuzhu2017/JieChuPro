@@ -1,6 +1,7 @@
 package com.jiechu.jiechupro.net;
 
 import com.trello.rxlifecycle.android.ActivityEvent;
+import com.trello.rxlifecycle.android.FragmentEvent;
 
 import java.io.IOException;
 import java.lang.ref.SoftReference;
@@ -72,7 +73,7 @@ public class HttpManager {
 
         /*rxjava处理*/
         //加载框设置
-        ProgressSubscriber subscriber = new ProgressSubscriber(baseApi);
+        ProgressSubscriber subscriber = new ProgressSubscriber(baseApi, true);
         Observable observable = baseApi.getObservable(retrofit)
                 /*生命周期管理*/
                 .compose(baseApi.getRxAppCompatActivity().bindUntilEvent(ActivityEvent.PAUSE))
@@ -92,4 +93,53 @@ public class HttpManager {
         observable.subscribe(subscriber);
     }
 
+    /**
+     * fragment请求数据
+     *
+     * @param baseApi
+     */
+    public void fragmentConnToServer(BaseApi baseApi) {
+        /*手动创建一个OkHttpClient并设置超时时间*/
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        builder.connectTimeout(baseApi.getConnTimeout(), TimeUnit.SECONDS);
+        builder.addInterceptor(new Interceptor() {
+            @Override
+            public Response intercept(Chain chain) throws IOException {
+                Request request = chain.request()
+                        .newBuilder()
+                        .addHeader("Content-Type", "application/json; charset=utf-8")
+                        .build();
+                return chain.proceed(request);
+            }
+        });
+
+        //创建Retrofit对象
+        Retrofit retrofit = new Retrofit.Builder()
+                .client(builder.build())
+                .baseUrl(baseApi.getBaseUrl())
+                .addConverterFactory(JsonConverterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .build();
+
+        /*rxjava处理*/
+        //加载框设置
+        ProgressSubscriber subscriber = new ProgressSubscriber(baseApi, false);
+        Observable observable = baseApi.getObservable(retrofit)
+                /*生命周期管理*/
+                .compose(baseApi.getRxFragment().bindUntilEvent(FragmentEvent.PAUSE))
+                /*http请求线程*/
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                /*回调线程*/
+                .observeOn(AndroidSchedulers.mainThread())
+                /*结果判断*/
+                .map(baseApi);
+        //链接式对象返回
+        SoftReference<HttpOnNextListener> httpOnNextListener = baseApi.getListener();
+        if (httpOnNextListener != null && httpOnNextListener.get() != null) {
+            httpOnNextListener.get().onNext(observable);
+        }
+        //数据回调
+        observable.subscribe(subscriber);
+    }
 }

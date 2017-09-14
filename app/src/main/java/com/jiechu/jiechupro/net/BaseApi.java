@@ -2,6 +2,7 @@ package com.jiechu.jiechupro.net;
 
 import com.jiechu.jiechupro.Constants;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
+import com.trello.rxlifecycle.components.support.RxFragment;
 
 import org.json.JSONObject;
 
@@ -19,6 +20,8 @@ import rx.functions.Func1;
 public abstract class BaseApi<T> implements Func1<JSONObject, T> {
     /*rx与activity绑定，管理生命周期，软引用防止内存泄漏*/
     private SoftReference<RxAppCompatActivity> rxAppCompatActivity;
+    /*rx与Fragment绑定*/
+    private SoftReference<RxFragment> rxFragment;
     /*请求结果回调*/
     private SoftReference<HttpOnNextListener> listener;
     /*是否能取消加载框*/
@@ -46,20 +49,39 @@ public abstract class BaseApi<T> implements Func1<JSONObject, T> {
     /*缓存URL--可手动设置*/
     private String cacheUrl;
 
-    /*构造函数*/
+    /*构造函数RxAppCompatActivity*/
     public BaseApi(HttpOnNextListener listener, RxAppCompatActivity rxAppCompatActivity) {
         setListener(listener);
         setRxAppCompatActivity(rxAppCompatActivity);
         /*默认显示加载框和需要缓存处理*/
         setShowProgress(true);
         setCanCancelProgress(true);
-        setBaseUrl("http://"+Constants.BASE_IP+"/Api/");
+        setBaseUrl("http://" + Constants.BASE_IP + "/Api/");
+        setConnTimeout(10);
+    }
+
+    /*构造函数RxFragment*/
+    public BaseApi(HttpOnNextListener listener, RxFragment rxFragment) {
+        setListener(listener);
+        setRxFragment(rxFragment);
+        /*默认显示加载框和需要缓存处理*/
+        setShowProgress(true);
+        setCanCancelProgress(true);
+        setBaseUrl("http://" + Constants.BASE_IP + "/Api/");
         setConnTimeout(10);
     }
 
     @Override
     public T call(JSONObject object) {
         return (T) object;
+    }
+
+    public RxFragment getRxFragment() {
+        return rxFragment.get();
+    }
+
+    public void setRxFragment(RxFragment rxFragment) {
+        this.rxFragment = new SoftReference<RxFragment>(rxFragment);
     }
 
     /**

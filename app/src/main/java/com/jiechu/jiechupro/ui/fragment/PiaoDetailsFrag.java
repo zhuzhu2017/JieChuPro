@@ -3,7 +3,6 @@ package com.jiechu.jiechupro.ui.fragment;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +10,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.jiechu.jiechupro.R;
+import com.jiechu.jiechupro.net.HttpManager;
+import com.jiechu.jiechupro.net.HttpOnNextListener;
+import com.jiechu.jiechupro.net.api.PiaoDetailsApi;
+import com.trello.rxlifecycle.components.support.RxFragment;
+
+import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,7 +26,7 @@ import butterknife.Unbinder;
  * Created by allen on 2017/9/12.
  */
 
-public class PiaoDetailsFrag extends Fragment {
+public class PiaoDetailsFrag extends RxFragment {
 
     @BindView(R.id.tv_piao_title)
     TextView tvPiaoTitle;
@@ -97,8 +102,33 @@ public class PiaoDetailsFrag extends Fragment {
         //设置标题
         tvPiaoTitle.setText("接触网第一种工作票");
         //获取数据
-        Log.d("工作票id", id + "===");
+        initData();
     }
+
+    /**
+     * 获取数据
+     */
+    private void initData() {
+        PiaoDetailsApi piaoDetailsApi = new PiaoDetailsApi(piaoDetailsListener, this);
+        piaoDetailsApi.setKeyValue(id);
+        HttpManager.getInstance().fragmentConnToServer(piaoDetailsApi);
+    }
+
+    /**
+     * 回调监听
+     */
+    HttpOnNextListener<JSONObject> piaoDetailsListener = new HttpOnNextListener<JSONObject>() {
+        @Override
+        public void onNext(JSONObject object) {
+            Log.d("详情", object.toString());
+        }
+
+        @Override
+        public void onError(Throwable e) {
+            super.onError(e);
+            Log.d("详情错误", e.getMessage());
+        }
+    };
 
     @Override
     public void onDestroyView() {

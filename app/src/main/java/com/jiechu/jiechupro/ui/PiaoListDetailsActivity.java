@@ -15,7 +15,6 @@ import com.jiechu.jiechupro.R;
 import com.jiechu.jiechupro.ui.fragment.GQYBHJSGHJLFrag;
 import com.jiechu.jiechupro.ui.fragment.PiaoDetailsFrag;
 import com.jiechu.jiechupro.ui.fragment.SwitchFrag;
-import com.jiechu.jiechupro.ui.fragment.TDZYFGDFrag;
 import com.jiechu.jiechupro.ui.fragment.TDZYMLPFrag;
 import com.jiechu.jiechupro.ui.fragment.XCPicFrag;
 import com.jiechu.jiechupro.ui.fragment.YT46TJFrag;
@@ -50,7 +49,7 @@ public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.
 
     private String id;  //主键id
     private PiaoDetailsFrag piaoDetailsFrag;    //第一种工作票
-    private TDZYFGDFrag tdzyfgdFrag;    //停电作业分工单
+    //    private TDZYFGDFrag tdzyfgdFrag;    //停电作业分工单
     private GQYBHJSGHJLFrag gqybhjsghjlFrag;    //工前预备会及收工会记录
     private TDZYMLPFrag tdzymlpFrag;    //停电作业命令票
     private YT46TJFrag yt46TJFrag;  //运统46草拟稿及防护“三率”统计
@@ -110,21 +109,21 @@ public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.
                     }
                     fragmentTransaction.show(piaoDetailsFrag);
                     break;
-                case 1: //停电作业分工单
-                    if (tdzyfgdFrag == null) {
-                        tdzyfgdFrag = new TDZYFGDFrag();
-                        Bundle bundle = new Bundle();
-                        bundle.putString("id", id);
-                        tdzyfgdFrag.setArguments(bundle);
-                        fragmentList.add(tdzyfgdFrag);
-                        fragmentTransaction.add(R.id.fragment_container, tdzyfgdFrag);
-                    }
-                    for (Fragment ele : fragmentList) {
-                        fragmentTransaction.hide(ele);
-                    }
-                    fragmentTransaction.show(tdzyfgdFrag);
-                    break;
-                case 2: //工前预备会及收工会记录
+//                case 1: //停电作业分工单
+//                    if (tdzyfgdFrag == null) {
+//                        tdzyfgdFrag = new TDZYFGDFrag();
+//                        Bundle bundle = new Bundle();
+//                        bundle.putString("id", id);
+//                        tdzyfgdFrag.setArguments(bundle);
+//                        fragmentList.add(tdzyfgdFrag);
+//                        fragmentTransaction.add(R.id.fragment_container, tdzyfgdFrag);
+//                    }
+//                    for (Fragment ele : fragmentList) {
+//                        fragmentTransaction.hide(ele);
+//                    }
+//                    fragmentTransaction.show(tdzyfgdFrag);
+//                    break;
+                case 1: //工前预备会及收工会记录
                     if (gqybhjsghjlFrag == null) {
                         gqybhjsghjlFrag = new GQYBHJSGHJLFrag();
                         Bundle bundle = new Bundle();
@@ -138,7 +137,7 @@ public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.
                     }
                     fragmentTransaction.show(gqybhjsghjlFrag);
                     break;
-                case 3: //停电作业命令票
+                case 2: //停电作业命令票
                     if (tdzymlpFrag == null) {
                         tdzymlpFrag = new TDZYMLPFrag();
                         Bundle bundle = new Bundle();
@@ -152,7 +151,7 @@ public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.
                     }
                     fragmentTransaction.show(tdzymlpFrag);
                     break;
-                case 4: // "运统46草拟稿及防护“三率”统计", "作业现场照片浏览"};
+                case 3: // "运统46草拟稿及防护“三率”统计", "作业现场照片浏览"};
                     if (yt46TJFrag == null) {
                         yt46TJFrag = new YT46TJFrag();
                         Bundle bundle = new Bundle();
@@ -166,7 +165,7 @@ public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.
                     }
                     fragmentTransaction.show(yt46TJFrag);
                     break;
-                case 5: //作业现场照片浏览
+                case 4: //作业现场照片浏览
                     if (xcPicFrag == null) {
                         xcPicFrag = new XCPicFrag();
                         Bundle bundle = new Bundle();

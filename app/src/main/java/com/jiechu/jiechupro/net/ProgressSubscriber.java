@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.widget.Toast;
 
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
+import com.trello.rxlifecycle.components.support.RxFragment;
 
 import java.lang.ref.SoftReference;
 import java.net.ConnectException;
@@ -26,15 +27,24 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
     private SoftReference<HttpOnNextListener> mSubscriberOnNextListener;
     //软引用防止内存泄漏
     private SoftReference<RxAppCompatActivity> mActivity;
+    //fragment软引用
+    private SoftReference<RxFragment> mFragment;
     //加载框对象——可以自定义
     private ProgressDialog dialog;
     //请求的封装数据
     private BaseApi baseApi;
+    //是否是Activity
+    private boolean isActivity;
 
-    public ProgressSubscriber(BaseApi baseApi) {
+    public ProgressSubscriber(BaseApi baseApi, boolean isActivity) {
+        this.isActivity = isActivity;
         this.baseApi = baseApi;
         this.mSubscriberOnNextListener = baseApi.getListener();
-        this.mActivity = new SoftReference<RxAppCompatActivity>(baseApi.getRxAppCompatActivity());
+        if (isActivity) {
+            this.mActivity = new SoftReference<RxAppCompatActivity>(baseApi.getRxAppCompatActivity());
+        } else {
+            this.mFragment = new SoftReference<RxFragment>(baseApi.getRxFragment());
+        }
         setShowProgress(baseApi.isShowProgress());
         if (baseApi.isShowProgress()) {   //设置加载框显示的时候，初始化加载框
             initProgressDialog(baseApi.isCanCancelProgress());
@@ -47,7 +57,12 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
      * @param canCancelProgress 是否能取消显示加载框
      */
     private void initProgressDialog(boolean canCancelProgress) {
-        Context context = mActivity.get();
+        Context context = null;
+        if (isActivity) {
+            context = mActivity.get();
+        } else {
+            context = mFragment.get().getContext();
+        }
         if (dialog == null && context != null) {
             dialog = new ProgressDialog(context);
             dialog.setCancelable(canCancelProgress);
@@ -81,7 +96,12 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
     private void showProgressDialog() {
         //没有设置显示进度框的话直接返回
         if (!isShowProgress()) return;
-        Context context = mActivity.get();
+        Context context = null;
+        if (isActivity) {
+            context = mActivity.get();
+        } else {
+            context = mFragment.get().getContext();
+        }
         if (dialog == null || context == null) return;
         if (!dialog.isShowing()) {
             dialog.show();
@@ -138,7 +158,12 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
      * @param e 异常
      */
     private void dealError(Throwable e) {
-        Context context = mActivity.get();
+        Context context = null;
+        if (isActivity) {
+            context = mActivity.get();
+        } else {
+            context = mFragment.get().getContext();
+        }
         if (context == null) return;
         if (e instanceof SocketTimeoutException) {
             Toast.makeText(context, "网络中断，请检查您的网络状态", Toast.LENGTH_SHORT).show();

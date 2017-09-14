@@ -33,7 +33,7 @@ public class SwitchFrag extends Fragment {
 
     private Activity ctx;
 
-    private String[] titles = {"第一种工作票", "停电作业分工单", "工前预备会及收工会记录", "停电作业命令票",
+    private String[] titles = {"第一种工作票", "工前预备会及收工会记录", "停电作业命令票",
             "运统46草拟稿及防护“三率”统计", "作业现场照片浏览"};
     private List<TitleBean> titleList = new ArrayList<>();
     private SwitchAdapter adapter;

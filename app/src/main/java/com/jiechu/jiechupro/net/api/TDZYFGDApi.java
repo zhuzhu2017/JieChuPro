@@ -15,7 +15,7 @@ import rx.Observable;
  * Created by allen on 2017/9/14.
  */
 
-public class TDZYPApi extends BaseApi {
+public class TDZYFGDApi extends BaseApi {
 
     private String keyValue;
 
@@ -27,7 +27,7 @@ public class TDZYPApi extends BaseApi {
         this.keyValue = keyValue;
     }
 
-    public TDZYPApi(HttpOnNextListener listener, RxAppCompatActivity rxAppCompatActivity) {
+    public TDZYFGDApi(HttpOnNextListener listener, RxAppCompatActivity rxAppCompatActivity) {
         super(listener, rxAppCompatActivity);
     }
 
