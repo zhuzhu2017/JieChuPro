@@ -74,13 +74,11 @@ public class PiaoDetailsFrag extends RxFragment {
     Unbinder unbinder;
     @BindView(R.id.tv_gq_title)
     TextView tvGqTitle;
-    private Activity ctx;
     private String id;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ctx = getActivity();
         Bundle arguments = getArguments();
         if (arguments != null) {
             id = arguments.getString("id");

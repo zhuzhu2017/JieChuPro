@@ -4,6 +4,7 @@ import com.jiechu.jiechupro.net.BaseApi;
 import com.jiechu.jiechupro.net.HttpOnNextListener;
 import com.jiechu.jiechupro.net.HttpPostService;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
+import com.trello.rxlifecycle.components.support.RxFragment;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,8 +28,8 @@ public class SGHJLApi extends BaseApi {
         this.keyValue = keyValue;
     }
 
-    public SGHJLApi(HttpOnNextListener listener, RxAppCompatActivity rxAppCompatActivity) {
-        super(listener, rxAppCompatActivity);
+    public SGHJLApi(HttpOnNextListener listener, RxFragment rxFragment) {
+        super(listener, rxFragment);
     }
 
     @Override
