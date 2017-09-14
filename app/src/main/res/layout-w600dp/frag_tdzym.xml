@@ -34,7 +34,7 @@
                         style="@style/piao_details_title"
                         android:text="命令编号：" />
 
-                    <TextView style="@style/piao_details_des" />
+                    <TextView android:id="@+id/tv_details_mlbh" style="@style/piao_details_des" />
 
                 </LinearLayout>
                 <!--分割线-->
@@ -54,7 +54,7 @@
                         style="@style/piao_details_title"
                         android:text="批准时间：" />
 
-                    <TextView style="@style/piao_details_des" />
+                    <TextView android:id="@+id/tv_details_pzsj" style="@style/piao_details_des" />
 
                 </LinearLayout>
                 <!--分割线-->
@@ -74,7 +74,7 @@
                         style="@style/piao_details_title"
                         android:text="命令内容：" />
 
-                    <TextView style="@style/piao_details_des" />
+                    <TextView android:id="@+id/tv_details_mlnr" style="@style/piao_details_des" />
 
                 </LinearLayout>
                 <!--分割线-->
@@ -94,7 +94,7 @@
                         style="@style/piao_details_title"
                         android:text="要求完成时间：" />
 
-                    <TextView style="@style/piao_details_des" />
+                    <TextView android:id="@+id/tv_details_yqwcsj" style="@style/piao_details_des" />
 
                 </LinearLayout>
                 <!--分割线-->
@@ -120,7 +120,7 @@
                             style="@style/piao_details_title"
                             android:text="发令人：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_flr" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -134,7 +134,7 @@
                             style="@style/piao_details_title"
                             android:text="受令人：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_slr" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -156,7 +156,7 @@
                         style="@style/piao_details_title"
                         android:text="消令时间：" />
 
-                    <TextView style="@style/piao_details_des" />
+                    <TextView android:id="@+id/tv_details_xlsj" style="@style/piao_details_des" />
 
                 </LinearLayout>
                 <!--分割线-->
@@ -182,7 +182,7 @@
                             style="@style/piao_details_title"
                             android:text="消令人：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_xlr" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -196,7 +196,7 @@
                             style="@style/piao_details_title"
                             android:text="供电调度员：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_gdddy" style="@style/piao_details_des" />
 
                     </LinearLayout>
 

@@ -1,6 +1,5 @@
 package com.jiechu.jiechupro.net.api;
 
-import com.jiechu.jiechupro.Constants;
 import com.jiechu.jiechupro.net.BaseApi;
 import com.jiechu.jiechupro.net.HttpOnNextListener;
 import com.jiechu.jiechupro.net.HttpPostService;
@@ -13,31 +12,22 @@ import retrofit2.Retrofit;
 import rx.Observable;
 
 /**
- * Created by allen on 2017/9/12.
+ * Created by allen on 2017/9/14.
  */
 
-public class LoginApi extends BaseApi {
+public class SGHJLApi extends BaseApi {
 
-    private String username;
-    private String password;
+    private String keyValue;
 
-    public String getUsername() {
-        return username;
+    public String getKeyValue() {
+        return keyValue;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setKeyValue(String keyValue) {
+        this.keyValue = keyValue;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public LoginApi(HttpOnNextListener listener, RxAppCompatActivity rxAppCompatActivity) {
+    public SGHJLApi(HttpOnNextListener listener, RxAppCompatActivity rxAppCompatActivity) {
         super(listener, rxAppCompatActivity);
     }
 
@@ -46,12 +36,11 @@ public class LoginApi extends BaseApi {
         HttpPostService httpPostService = retrofit.create(HttpPostService.class);
         JSONObject object = new JSONObject();
         try {
-            object.put("username", getUsername());
-            object.put("password", getPassword());
+            object.put("keyValue", getKeyValue());
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return httpPostService.login(object);
+        return httpPostService.getSGHJLData(object);
     }
 
     @Override

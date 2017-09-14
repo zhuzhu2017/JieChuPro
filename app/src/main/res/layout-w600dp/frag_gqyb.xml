@@ -87,7 +87,7 @@
                     android:layout_marginTop="@dimen/space_10"
                     android:background="@color/common_gray" />
 
-                <TextView style="@style/simple_des" />
+                <TextView android:id="@+id/tv_details_gqyx" style="@style/simple_des" />
                 <!--分割线-->
                 <View
                     android:layout_width="match_parent"
@@ -110,7 +110,7 @@
                     android:layout_marginTop="@dimen/space_10"
                     android:background="@color/common_gray" />
 
-                <TextView style="@style/simple_des" />
+                <TextView android:id="@+id/tv_details_fgjl" style="@style/simple_des" />
                 <!--分割线-->
                 <View
                     android:layout_width="match_parent"
@@ -143,7 +143,7 @@
                         style="@style/piao_details_title"
                         android:text="任务来源：" />
 
-                    <TextView style="@style/piao_details_des" />
+                    <TextView android:id="@+id/tv_details_rwly" style="@style/piao_details_des" />
 
                 </LinearLayout>
                 <!--分割线-->
@@ -163,7 +163,7 @@
                         style="@style/piao_details_title"
                         android:text="收工记录：" />
 
-                    <TextView style="@style/piao_details_des" />
+                    <TextView android:id="@+id/tv_details_sgjl" style="@style/piao_details_des" />
 
                 </LinearLayout>
                 <!--分割线-->
@@ -183,7 +183,7 @@
                         style="@style/piao_details_title"
                         android:text="其他：" />
 
-                    <TextView style="@style/piao_details_des" />
+                    <TextView android:id="@+id/tv_details_qt" style="@style/piao_details_des" />
 
                 </LinearLayout>
                 <!--分割线-->
@@ -209,7 +209,7 @@
                             style="@style/piao_details_title"
                             android:text="行调命令：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_xdml" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -223,7 +223,7 @@
                             style="@style/piao_details_title"
                             android:text="行调命令号：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_xdmlh" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -245,7 +245,7 @@
                         style="@style/piao_details_title"
                         android:text="工作领导人：" />
 
-                    <TextView style="@style/piao_details_des" />
+                    <TextView android:id="@+id/tv_details_sgjlldr" style="@style/piao_details_des" />
 
                 </LinearLayout>
                 <!--分割线-->

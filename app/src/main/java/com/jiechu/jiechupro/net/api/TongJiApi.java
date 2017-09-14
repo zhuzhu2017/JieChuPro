@@ -30,10 +30,6 @@ public class TongJiApi extends BaseApi {
 
     public TongJiApi(HttpOnNextListener listener, RxAppCompatActivity rxAppCompatActivity) {
         super(listener, rxAppCompatActivity);
-        setShowProgress(true);
-        setCanCancelProgress(true);
-        setBaseUrl(Constants.BASE_URL);
-        setConnTimeout(10);
     }
 
     @Override

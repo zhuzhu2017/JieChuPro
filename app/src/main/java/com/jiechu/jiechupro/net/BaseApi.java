@@ -1,5 +1,6 @@
 package com.jiechu.jiechupro.net;
 
+import com.jiechu.jiechupro.Constants;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 import org.json.JSONObject;
@@ -51,7 +52,9 @@ public abstract class BaseApi<T> implements Func1<JSONObject, T> {
         setRxAppCompatActivity(rxAppCompatActivity);
         /*默认显示加载框和需要缓存处理*/
         setShowProgress(true);
-        setCacheNeeded(true);
+        setCanCancelProgress(true);
+        setBaseUrl(Constants.BASE_URL);
+        setConnTimeout(10);
     }
 
     @Override

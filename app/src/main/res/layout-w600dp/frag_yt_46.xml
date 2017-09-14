@@ -39,7 +39,9 @@
                             style="@style/piao_details_title"
                             android:text="驻站联络员姓名：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView
+                            android:id="@+id/tv_details_zzllyxm"
+                            style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -53,7 +55,9 @@
                             style="@style/piao_details_title"
                             android:text="日期：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView
+                            android:id="@+id/tv_details_rq"
+                            style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -90,7 +94,9 @@
                         style="@style/piao_details_title"
                         android:text="登记：" />
 
-                    <TextView style="@style/piao_details_des" />
+                    <TextView
+                        android:id="@+id/tv_details_dj"
+                        style="@style/piao_details_des" />
 
                 </LinearLayout>
                 <!--分割线-->
@@ -110,7 +116,9 @@
                         style="@style/piao_details_title"
                         android:text="销记：" />
 
-                    <TextView style="@style/piao_details_des" />
+                    <TextView
+                        android:id="@+id/tv_details_xj"
+                        style="@style/piao_details_des" />
 
                 </LinearLayout>
                 <!--分割线-->
@@ -130,7 +138,9 @@
                         style="@style/piao_details_title"
                         android:text="施工负责人签字：" />
 
-                    <TextView style="@style/piao_details_des" />
+                    <TextView
+                        android:id="@+id/tv_details_sgfzrqz"
+                        style="@style/piao_details_des" />
 
                 </LinearLayout>
                 <!--分割线-->
@@ -171,7 +181,9 @@
                             style="@style/piao_details_title"
                             android:text="防护登记作业次数：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView
+                            android:id="@+id/tv_details_fhdjzycs"
+                            style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -185,7 +197,9 @@
                             style="@style/piao_details_title"
                             android:text="实际预告列车次数：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView
+                            android:id="@+id/tv_details_sjyglccs"
+                            style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -213,7 +227,9 @@
                             style="@style/piao_details_title"
                             android:text="提前10分钟下道次数：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView
+                            android:id="@+id/tv_details_xdcs"
+                            style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -227,7 +243,9 @@
                             style="@style/piao_details_title"
                             android:text="实际上道作业次数：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView
+                            android:id="@+id/tv_details_sjsdcs"
+                            style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -255,7 +273,9 @@
                             style="@style/piao_details_title"
                             android:text="通过本线（邻线）\n列车次数：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView
+                            android:id="@+id/tv_details_bxlccs"
+                            style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -269,7 +289,9 @@
                             style="@style/piao_details_title"
                             android:text="通过作业地点关键\n列车次数：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView
+                            android:id="@+id/tv_details_gjlccs"
+                            style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -312,7 +334,9 @@
                             style="@style/piao_details_title"
                             android:text="防护登记作业次数：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView
+                            android:id="@+id/tv_details_fhdjzycs2"
+                            style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -326,7 +350,9 @@
                             style="@style/piao_details_title"
                             android:text="实际预告列车次数：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView
+                            android:id="@+id/tv_details_sjyglccs2"
+                            style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -354,7 +380,9 @@
                             style="@style/piao_details_title"
                             android:text="提前10分钟下道次数：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView
+                            android:id="@+id/tv_details_xdcs2"
+                            style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -368,7 +396,9 @@
                             style="@style/piao_details_title"
                             android:text="实际上道作业次数：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView
+                            android:id="@+id/tv_details_sjsdcs2"
+                            style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -396,7 +426,9 @@
                             style="@style/piao_details_title"
                             android:text="通过本线（邻线）\n列车次数：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView
+                            android:id="@+id/tv_details_bxlccs2"
+                            style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -410,7 +442,9 @@
                             style="@style/piao_details_title"
                             android:text="通过作业地点关键\n列车次数：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView
+                            android:id="@+id/tv_details_gjlccs2"
+                            style="@style/piao_details_des" />
 
                     </LinearLayout>
 

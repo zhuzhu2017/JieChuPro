@@ -67,10 +67,6 @@ public class PiaoListApi extends BaseApi {
 
     public PiaoListApi(HttpOnNextListener listener, RxAppCompatActivity rxAppCompatActivity) {
         super(listener, rxAppCompatActivity);
-        setShowProgress(true);
-        setCanCancelProgress(true);
-        setBaseUrl(Constants.BASE_URL);
-        setConnTimeout(10);
     }
 
     @Override

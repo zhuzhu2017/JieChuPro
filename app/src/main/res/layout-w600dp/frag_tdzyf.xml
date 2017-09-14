@@ -40,7 +40,7 @@
                             style="@style/piao_details_title"
                             android:text="作业地点：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_gzdd" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -54,7 +54,7 @@
                             style="@style/piao_details_title"
                             android:text="工作领导人：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_gzldr" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -76,7 +76,7 @@
                         style="@style/piao_details_title"
                         android:text="作业内容：" />
 
-                    <TextView style="@style/piao_details_des" />
+                    <TextView android:id="@+id/tv_details_zynr" style="@style/piao_details_des" />
 
                 </LinearLayout>
                 <!--分割线-->
@@ -102,7 +102,7 @@
                             style="@style/piao_details_title"
                             android:text="要令地点：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_yldd" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -116,7 +116,7 @@
                             style="@style/piao_details_title"
                             android:text="要令人员：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_ylry" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -130,7 +130,7 @@
                             style="@style/piao_details_title"
                             android:text="驻站防护地点：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_zzfhdd" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -144,7 +144,7 @@
                             style="@style/piao_details_title"
                             android:text="驻站联络员：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_zzlly" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -187,7 +187,7 @@
                             style="@style/piao_details_title"
                             android:text="防护员1：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_fhy1" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -201,7 +201,7 @@
                             style="@style/piao_details_title"
                             android:text="防护员2：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_fhy2" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -215,7 +215,7 @@
                             style="@style/piao_details_title"
                             android:text="防护员3：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_fhy3" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -258,7 +258,7 @@
                             style="@style/piao_details_title"
                             android:text="接地杆号：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_jdgh1" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -272,7 +272,7 @@
                             style="@style/piao_details_title"
                             android:text="操作人：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_czr1" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -286,7 +286,7 @@
                             style="@style/piao_details_title"
                             android:text="监护人：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_jhr1" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -314,7 +314,7 @@
                             style="@style/piao_details_title"
                             android:text="接地杆号：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_jdgh2" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -328,7 +328,7 @@
                             style="@style/piao_details_title"
                             android:text="操作人：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_czr2" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -342,7 +342,7 @@
                             style="@style/piao_details_title"
                             android:text="监护人：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_jhr2" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -370,7 +370,7 @@
                             style="@style/piao_details_title"
                             android:text="接地杆号：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_jdgh3" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -384,7 +384,7 @@
                             style="@style/piao_details_title"
                             android:text="操作人：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_czr3" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -398,7 +398,7 @@
                             style="@style/piao_details_title"
                             android:text="监护人：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_jhr3" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -426,7 +426,7 @@
                             style="@style/piao_details_title"
                             android:text="接地杆号：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_jdgh4" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -440,7 +440,7 @@
                             style="@style/piao_details_title"
                             android:text="操作人：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_czr4" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -454,7 +454,7 @@
                             style="@style/piao_details_title"
                             android:text="监护人：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_jhr4" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -482,7 +482,7 @@
                             style="@style/piao_details_title"
                             android:text="接地杆号：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_jdgh5" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -496,7 +496,7 @@
                             style="@style/piao_details_title"
                             android:text="操作人：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_czr5" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -510,7 +510,7 @@
                             style="@style/piao_details_title"
                             android:text="监护人：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_jhr5" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -538,7 +538,7 @@
                             style="@style/piao_details_title"
                             android:text="接地杆号：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_jdgh6" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -552,7 +552,7 @@
                             style="@style/piao_details_title"
                             android:text="操作人：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_czr6" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -566,7 +566,7 @@
                             style="@style/piao_details_title"
                             android:text="监护人：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_jhr6" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -603,7 +603,7 @@
                         style="@style/piao_details_title"
                         android:text="作业范围及内容：" />
 
-                    <TextView style="@style/piao_details_des" />
+                    <TextView android:id="@+id/tv_details_dyzyfwjnr" style="@style/piao_details_des" />
 
                 </LinearLayout>
                 <!--分割线-->
@@ -623,7 +623,7 @@
                         style="@style/piao_details_title"
                         android:text="高空作业人：" />
 
-                    <TextView style="@style/piao_details_des" />
+                    <TextView android:id="@+id/tv_details_dygkzyr" style="@style/piao_details_des" />
 
                 </LinearLayout>
                 <!--分割线-->
@@ -643,7 +643,9 @@
                         style="@style/piao_details_title"
                         android:text="辅助人员：" />
 
-                    <TextView style="@style/piao_details_des" />
+                    <TextView
+                        android:id="@+id/tv_details_dyfzry"
+                        style="@style/piao_details_des" />
 
                 </LinearLayout>
                 <!--分割线-->
@@ -669,7 +671,7 @@
                             style="@style/piao_details_title"
                             android:text="监护人：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_dyjhr" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -683,7 +685,7 @@
                             style="@style/piao_details_title"
                             android:text="测量人：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_dyclr" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -697,7 +699,7 @@
                             style="@style/piao_details_title"
                             android:text="记录人：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_dyjlr" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -734,7 +736,7 @@
                         style="@style/piao_details_title"
                         android:text="作业范围及内容：" />
 
-                    <TextView style="@style/piao_details_des" />
+                    <TextView android:id="@+id/tv_details_dezyfwjnr" style="@style/piao_details_des" />
 
                 </LinearLayout>
                 <!--分割线-->
@@ -754,7 +756,7 @@
                         style="@style/piao_details_title"
                         android:text="高空作业人：" />
 
-                    <TextView style="@style/piao_details_des" />
+                    <TextView android:id="@+id/tv_details_degkzyr" style="@style/piao_details_des" />
 
                 </LinearLayout>
                 <!--分割线-->
@@ -774,7 +776,7 @@
                         style="@style/piao_details_title"
                         android:text="辅助人员：" />
 
-                    <TextView style="@style/piao_details_des" />
+                    <TextView android:id="@+id/tv_details_defzry" style="@style/piao_details_des" />
 
                 </LinearLayout>
                 <!--分割线-->
@@ -800,7 +802,7 @@
                             style="@style/piao_details_title"
                             android:text="监护人：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_dejhr" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -814,7 +816,7 @@
                             style="@style/piao_details_title"
                             android:text="测量人：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_declr" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -828,7 +830,7 @@
                             style="@style/piao_details_title"
                             android:text="记录人：" />
 
-                        <TextView style="@style/piao_details_des" />
+                        <TextView android:id="@+id/tv_details_dejlr" style="@style/piao_details_des" />
 
                     </LinearLayout>
 
@@ -850,7 +852,7 @@
                         style="@style/piao_details_title"
                         android:text="联系方式：" />
 
-                    <TextView style="@style/piao_details_des" />
+                    <TextView android:id="@+id/tv_details_lxfs" style="@style/piao_details_des" />
 
                 </LinearLayout>
                 <!--分割线-->
@@ -870,7 +872,7 @@
                         style="@style/piao_details_title"
                         android:text="备注：" />
 
-                    <TextView style="@style/piao_details_des" />
+                    <TextView android:id="@+id/tv_details_bz" style="@style/piao_details_des" />
 
                 </LinearLayout>
                 <!--分割线-->
