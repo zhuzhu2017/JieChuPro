@@ -82,6 +82,9 @@ public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         if (piaoDetailsFrag == null) {
             piaoDetailsFrag = new PiaoDetailsFrag();
+            Bundle bundle = new Bundle();
+            bundle.putString("id", id);
+            piaoDetailsFrag.setArguments(bundle);
             fragmentList.add(piaoDetailsFrag);
             fragmentTransaction.add(R.id.fragment_container, piaoDetailsFrag);
         }
@@ -96,6 +99,9 @@ public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.
                 case 0: //第一种工作票
                     if (piaoDetailsFrag == null) {
                         piaoDetailsFrag = new PiaoDetailsFrag();
+                        Bundle bundle = new Bundle();
+                        bundle.putString("id", id);
+                        piaoDetailsFrag.setArguments(bundle);
                         fragmentList.add(piaoDetailsFrag);
                         fragmentTransaction.add(R.id.fragment_container, piaoDetailsFrag);
                     }
@@ -107,6 +113,9 @@ public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.
                 case 1: //停电作业分工单
                     if (tdzyfgdFrag == null) {
                         tdzyfgdFrag = new TDZYFGDFrag();
+                        Bundle bundle = new Bundle();
+                        bundle.putString("id", id);
+                        tdzyfgdFrag.setArguments(bundle);
                         fragmentList.add(tdzyfgdFrag);
                         fragmentTransaction.add(R.id.fragment_container, tdzyfgdFrag);
                     }
@@ -118,6 +127,9 @@ public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.
                 case 2: //工前预备会及收工会记录
                     if (gqybhjsghjlFrag == null) {
                         gqybhjsghjlFrag = new GQYBHJSGHJLFrag();
+                        Bundle bundle = new Bundle();
+                        bundle.putString("id", id);
+                        gqybhjsghjlFrag.setArguments(bundle);
                         fragmentList.add(gqybhjsghjlFrag);
                         fragmentTransaction.add(R.id.fragment_container, gqybhjsghjlFrag);
                     }
@@ -129,6 +141,9 @@ public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.
                 case 3: //停电作业命令票
                     if (tdzymlpFrag == null) {
                         tdzymlpFrag = new TDZYMLPFrag();
+                        Bundle bundle = new Bundle();
+                        bundle.putString("id", id);
+                        tdzymlpFrag.setArguments(bundle);
                         fragmentList.add(tdzymlpFrag);
                         fragmentTransaction.add(R.id.fragment_container, tdzymlpFrag);
                     }
@@ -140,6 +155,9 @@ public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.
                 case 4: // "运统46草拟稿及防护“三率”统计", "作业现场照片浏览"};
                     if (yt46TJFrag == null) {
                         yt46TJFrag = new YT46TJFrag();
+                        Bundle bundle = new Bundle();
+                        bundle.putString("id", id);
+                        yt46TJFrag.setArguments(bundle);
                         fragmentList.add(yt46TJFrag);
                         fragmentTransaction.add(R.id.fragment_container, yt46TJFrag);
                     }
@@ -151,6 +169,9 @@ public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.
                 case 5: //作业现场照片浏览
                     if (xcPicFrag == null) {
                         xcPicFrag = new XCPicFrag();
+                        Bundle bundle = new Bundle();
+                        bundle.putString("id", id);
+                        xcPicFrag.setArguments(bundle);
                         fragmentList.add(xcPicFrag);
                         fragmentTransaction.add(R.id.fragment_container, xcPicFrag);
                     }

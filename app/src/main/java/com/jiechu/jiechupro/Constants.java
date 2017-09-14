@@ -11,6 +11,5 @@ public class Constants {
      */
     public static final String REQUEST_SUCCESS = "success";
 
-    public static final String BASE_IP = "1.192.90.115:9923";
-    public static final String BASE_URL = "http://" + BASE_IP + "/Api/";
+    public static String BASE_IP = "";
 }

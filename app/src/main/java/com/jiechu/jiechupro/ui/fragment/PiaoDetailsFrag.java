@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,14 +65,19 @@ public class PiaoDetailsFrag extends Fragment {
     TextView tvDetailsLdrqz;
     @BindView(R.id.tv_details_fprqz)
     TextView tvDetailsFprqz;
-    
+
     Unbinder unbinder;
     private Activity ctx;
+    private String id;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ctx = getActivity();
+        Bundle arguments = getArguments();
+        if (arguments != null) {
+            id = arguments.getString("id");
+        }
     }
 
     @Nullable
@@ -79,7 +85,19 @@ public class PiaoDetailsFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_piao_details, null);
         unbinder = ButterKnife.bind(this, view);
+        //初始化视图
+        initView();
         return view;
+    }
+
+    /**
+     * 初始化视图
+     */
+    private void initView() {
+        //设置标题
+        tvPiaoTitle.setText("接触网第一种工作票");
+        //获取数据
+        Log.d("工作票id", id + "===");
     }
 
     @Override

@@ -19,6 +19,7 @@ import com.jiechu.jiechupro.net.api.PiaoListApi;
 import com.jiechu.jiechupro.view.recyclerview.AutoLoad.AutoLoadRecyclerView;
 import com.jiechu.jiechupro.view.recyclerview.HeaderAndFooter.OnItemClickListener;
 import com.jiechu.jiechupro.view.recyclerview.LayoutManager.WZMLinearLayoutManager;
+import com.jiechu.jiechupro.view.recyclerview.PullToLoad.OnLoadListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -88,6 +89,8 @@ public class PiaoListActivity extends BaseActivity {
         lvPiao.setRefreshEnable(false);
         //初始化数据
         initData();
+        //设置监听
+        initListener();
     }
 
     /**
@@ -104,6 +107,19 @@ public class PiaoListActivity extends BaseActivity {
         piaoApi.setPage(String.valueOf(page));
         piaoApi.setKeyword(searchWord == null ? "" : searchWord);
         HttpManager.getInstance().connToServer(piaoApi);
+    }
+
+    /**
+     * 设置监听
+     */
+    private void initListener() {
+        lvPiao.setOnLoadListener(new OnLoadListener() {
+            @Override
+            public void onStartLoading(int skip) {
+                isLoadMore = true;
+                initData();
+            }
+        });
     }
 
     /**
@@ -148,31 +164,36 @@ public class PiaoListActivity extends BaseActivity {
                     } else {
                         if (rows != null) {
                             int orderNum = piaoList.size();
-                            for (int i = 0; i < rows.length(); i++) {
-                                JSONObject itemObject = rows.getJSONObject(i);
-                                if (itemObject != null) {
-                                    PiaoListBean listBean = new PiaoListBean();
-                                    int i1 = orderNum + i + 1;
-                                    if (i1 < 10) {
-                                        listBean.setXh("00" + i);
-                                    } else if (i1 >= 10 && i1 < 100) {
-                                        listBean.setXh("0" + i);
-                                    } else {
-                                        listBean.setXh("" + i1);
+                            if (rows.length() > 0) {
+                                for (int i = 0; i < rows.length(); i++) {
+                                    JSONObject itemObject = rows.getJSONObject(i);
+                                    if (itemObject != null) {
+                                        PiaoListBean listBean = new PiaoListBean();
+                                        int i1 = orderNum + i + 1;
+                                        if (i1 < 10) {
+                                            listBean.setXh("00" + i);
+                                        } else if (i1 >= 10 && i1 < 100) {
+                                            listBean.setXh("0" + i);
+                                        } else {
+                                            listBean.setXh("" + i1);
+                                        }
+                                        listBean.setDdlx(itemObject.getString("ddlx") + "");
+                                        listBean.setFpr(itemObject.getString("fpr") + "");
+                                        listBean.setFprq(itemObject.getString("fprq_app") + "");
+                                        listBean.setGq(itemObject.getString("gqmc") + "");
+                                        listBean.setLdr(itemObject.getString("gzldr") + "");
+                                        listBean.setPh(itemObject.getString("gzpbh") + "");
+                                        listBean.setYxq(itemObject.getString("gzpyxq_list") + "");
+                                        listBean.setZt(itemObject.getString("zt_desc") + "");
+                                        listBean.setZydd(itemObject.getString("zydd") + "");
+                                        listBean.setZynr(itemObject.getString("zynr") + "");
+                                        listBean.setId(itemObject.getString("id") + "");
+                                        piaoList.add(listBean);
                                     }
-                                    listBean.setDdlx(itemObject.getString("ddlx") + "");
-                                    listBean.setFpr(itemObject.getString("fpr") + "");
-                                    listBean.setFprq(itemObject.getString("fprq_app") + "");
-                                    listBean.setGq(itemObject.getString("gqmc") + "");
-                                    listBean.setLdr(itemObject.getString("gzldr") + "");
-                                    listBean.setPh(itemObject.getString("gzpbh") + "");
-                                    listBean.setYxq(itemObject.getString("gzpyxq_list") + "");
-                                    listBean.setZt(itemObject.getString("zt_desc") + "");
-                                    listBean.setZydd(itemObject.getString("zydd") + "");
-                                    listBean.setZynr(itemObject.getString("zynr") + "");
-                                    listBean.setId(itemObject.getString("id") + "");
-                                    piaoList.add(listBean);
                                 }
+                                lvPiao.completeLoad();
+                            } else {
+                                lvPiao.setNoMore(true);
                             }
                         }
                     }

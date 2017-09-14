@@ -53,7 +53,7 @@ public abstract class BaseApi<T> implements Func1<JSONObject, T> {
         /*默认显示加载框和需要缓存处理*/
         setShowProgress(true);
         setCanCancelProgress(true);
-        setBaseUrl(Constants.BASE_URL);
+        setBaseUrl("http://"+Constants.BASE_IP+"/Api/");
         setConnTimeout(10);
     }
 

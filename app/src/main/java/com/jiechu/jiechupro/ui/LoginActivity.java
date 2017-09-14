@@ -3,7 +3,6 @@ package com.jiechu.jiechupro.ui;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
@@ -50,6 +49,12 @@ public class LoginActivity extends BaseActivity {
 
     @OnClick(R.id.tv_login)
     public void onViewClicked() {
+        String ipString = etIp.getText().toString();
+        if (TextUtils.isEmpty(ipString)) {
+            Constants.BASE_IP = etIp.getHint().toString();
+        } else {
+            Constants.BASE_IP = ipString;
+        }
         //跳转到主页面
 //        openActivity(MainActivity.class);
 //        finish();
