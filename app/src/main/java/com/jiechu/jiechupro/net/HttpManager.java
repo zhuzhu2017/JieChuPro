@@ -1,5 +1,8 @@
 package com.jiechu.jiechupro.net;
 
+import android.util.Log;
+
+import com.jiechu.jiechupro.JieChuApp;
 import com.trello.rxlifecycle.android.ActivityEvent;
 import com.trello.rxlifecycle.android.FragmentEvent;
 
@@ -58,6 +61,7 @@ public class HttpManager {
                 Request request = chain.request()
                         .newBuilder()
                         .addHeader("Content-Type", "application/json; charset=utf-8")
+                        .addHeader("Cookie", JieChuApp.token)
                         .build();
                 return chain.proceed(request);
             }
@@ -99,6 +103,7 @@ public class HttpManager {
      * @param baseApi
      */
     public void fragmentConnToServer(BaseApi baseApi) {
+        Log.d("详情token", JieChuApp.token);
         /*手动创建一个OkHttpClient并设置超时时间*/
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         builder.connectTimeout(baseApi.getConnTimeout(), TimeUnit.SECONDS);
@@ -108,6 +113,7 @@ public class HttpManager {
                 Request request = chain.request()
                         .newBuilder()
                         .addHeader("Content-Type", "application/json; charset=utf-8")
+                        .addHeader("Cookie", JieChuApp.token)
                         .build();
                 return chain.proceed(request);
             }

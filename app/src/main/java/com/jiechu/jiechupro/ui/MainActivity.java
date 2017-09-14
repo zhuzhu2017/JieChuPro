@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.jiechu.jiechupro.BaseActivity;
+import com.jiechu.jiechupro.JieChuApp;
 import com.jiechu.jiechupro.R;
 import com.jiechu.jiechupro.adapter.LineAdapter;
 import com.jiechu.jiechupro.adapter.PlantsAdapter;
@@ -197,6 +199,27 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.iv_header_back)
     public void onViewClicked() {
+        if (System.currentTimeMillis() - exitTime > 2000) {
+            Toast.makeText(context, "再点一次退出应用", Toast.LENGTH_SHORT).show();
+            exitTime = System.currentTimeMillis();
+        } else {
+            JieChuApp.getInstance().exit();
+        }
+    }
 
+    long exitTime = 0;
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (System.currentTimeMillis() - exitTime > 2000) {
+                Toast.makeText(context, "再点一次退出应用", Toast.LENGTH_SHORT).show();
+                exitTime = System.currentTimeMillis();
+            } else {
+                JieChuApp.getInstance().exit();
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

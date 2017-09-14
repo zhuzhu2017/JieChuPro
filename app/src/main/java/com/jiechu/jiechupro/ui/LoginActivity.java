@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.jiechu.jiechupro.BaseActivity;
 import com.jiechu.jiechupro.Constants;
+import com.jiechu.jiechupro.JieChuApp;
 import com.jiechu.jiechupro.R;
 import com.jiechu.jiechupro.net.HttpManager;
 import com.jiechu.jiechupro.net.HttpOnNextListener;
@@ -55,9 +56,6 @@ public class LoginActivity extends BaseActivity {
         } else {
             Constants.BASE_IP = ipString;
         }
-        //跳转到主页面
-//        openActivity(MainActivity.class);
-//        finish();
         String username = etUsername.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
         if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
@@ -82,6 +80,7 @@ public class LoginActivity extends BaseActivity {
             if (jsonObject != null) {
                 try {
                     String state = jsonObject.getString("state");
+                    JieChuApp.token = "hd_loginuserkey_2016=" + jsonObject.getString("hd_loginuserkey_2016");
                     Toast.makeText(LoginActivity.this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
                     if (TextUtils.equals(state, Constants.REQUEST_SUCCESS)) {
                         //跳转到主页面

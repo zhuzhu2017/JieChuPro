@@ -3,6 +3,7 @@ package com.jiechu.jiechupro.ui;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -133,7 +134,8 @@ public class PiaoListActivity extends BaseActivity {
                 try {
                     JSONArray rows = object.getJSONArray("rows");
                     if (!isLoadMore) {
-                        if (rows != null) {
+                        if (rows != null && rows.length() > 0) {
+                            lvPiao.setVisibility(View.VISIBLE);
                             for (int i = 0; i < rows.length(); i++) {
                                 JSONObject itemObject = rows.getJSONObject(i);
                                 if (itemObject != null) {
@@ -160,6 +162,8 @@ public class PiaoListActivity extends BaseActivity {
                                     piaoList.add(listBean);
                                 }
                             }
+                        } else {
+                            lvPiao.setVisibility(View.GONE);
                         }
                     } else {
                         if (rows != null) {
@@ -232,9 +236,16 @@ public class PiaoListActivity extends BaseActivity {
             case R.id.iv_header_back:
                 finish();
                 break;
-            case R.id.iv_search:
-                break;
             case R.id.ll_refresh:
+            case R.id.iv_search:
+                String word = etSearch.getText().toString();
+                if (TextUtils.isEmpty(word)) {
+                    searchWord = "";
+                } else {
+                    searchWord = word;
+                }
+                isLoadMore = false;
+                initData();
                 break;
         }
     }
