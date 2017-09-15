@@ -17,7 +17,7 @@ import rx.functions.Func1;
  * Created by allen on 2017/8/23.
  */
 
-public abstract class BaseApi<T> implements Func1<JSONObject, T> {
+public abstract class BaseApi<T> implements Func1<T, T> {
     /*rx与activity绑定，管理生命周期，软引用防止内存泄漏*/
     private SoftReference<RxAppCompatActivity> rxAppCompatActivity;
     /*rx与Fragment绑定*/
@@ -72,8 +72,8 @@ public abstract class BaseApi<T> implements Func1<JSONObject, T> {
     }
 
     @Override
-    public T call(JSONObject object) {
-        return (T) object;
+    public T call(T t) {
+        return t;
     }
 
     public RxFragment getRxFragment() {

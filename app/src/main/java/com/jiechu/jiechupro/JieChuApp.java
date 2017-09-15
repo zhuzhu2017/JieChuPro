@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+
 import java.lang.ref.WeakReference;
 import java.util.LinkedList;
 import java.util.List;
@@ -28,6 +30,7 @@ public class JieChuApp extends Application {
         super.onCreate();
         appContext = getApplicationContext();
         instance = this;
+        Fresco.initialize(this);
     }
 
     /**

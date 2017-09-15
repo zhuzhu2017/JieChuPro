@@ -48,6 +48,9 @@ public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.
     private Activity ctx;
 
     private String id;  //主键id
+    private String gzplb;  //工作票类别
+    private String gzpbh;  //工作票编号
+    private String gqmc;  //工区名称
     private PiaoDetailsFrag piaoDetailsFrag;    //第一种工作票
     //    private TDZYFGDFrag tdzyfgdFrag;    //停电作业分工单
     private GQYBHJSGHJLFrag gqybhjsghjlFrag;    //工前预备会及收工会记录
@@ -65,6 +68,9 @@ public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             id = bundle.getString("id");
+            gzplb = bundle.getString("gzplb");
+            gzpbh = bundle.getString("gzpbh");
+            gqmc = bundle.getString("gqmc");
         }
         //初始化视图
         initView();
@@ -83,6 +89,9 @@ public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.
             piaoDetailsFrag = new PiaoDetailsFrag();
             Bundle bundle = new Bundle();
             bundle.putString("id", id);
+            bundle.putString("gzplb", gzplb);
+            bundle.putString("gzpbh", gzpbh);
+            bundle.putString("gqmc", gqmc);
             piaoDetailsFrag.setArguments(bundle);
             fragmentList.add(piaoDetailsFrag);
             fragmentTransaction.add(R.id.fragment_container, piaoDetailsFrag);
@@ -100,6 +109,9 @@ public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.
                         piaoDetailsFrag = new PiaoDetailsFrag();
                         Bundle bundle = new Bundle();
                         bundle.putString("id", id);
+                        bundle.putString("gzplb", gzplb);
+                        bundle.putString("gzpbh", gzpbh);
+                        bundle.putString("gqmc", gqmc);
                         piaoDetailsFrag.setArguments(bundle);
                         fragmentList.add(piaoDetailsFrag);
                         fragmentTransaction.add(R.id.fragment_container, piaoDetailsFrag);
@@ -128,6 +140,9 @@ public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.
                         gqybhjsghjlFrag = new GQYBHJSGHJLFrag();
                         Bundle bundle = new Bundle();
                         bundle.putString("id", id);
+                        bundle.putString("gzplb", gzplb);
+                        bundle.putString("gzpbh", gzpbh);
+                        bundle.putString("gqmc", gqmc);
                         gqybhjsghjlFrag.setArguments(bundle);
                         fragmentList.add(gqybhjsghjlFrag);
                         fragmentTransaction.add(R.id.fragment_container, gqybhjsghjlFrag);
@@ -142,6 +157,9 @@ public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.
                         tdzymlpFrag = new TDZYMLPFrag();
                         Bundle bundle = new Bundle();
                         bundle.putString("id", id);
+                        bundle.putString("gzplb", gzplb);
+                        bundle.putString("gzpbh", gzpbh);
+                        bundle.putString("gqmc", gqmc);
                         tdzymlpFrag.setArguments(bundle);
                         fragmentList.add(tdzymlpFrag);
                         fragmentTransaction.add(R.id.fragment_container, tdzymlpFrag);
@@ -156,6 +174,9 @@ public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.
                         yt46TJFrag = new YT46TJFrag();
                         Bundle bundle = new Bundle();
                         bundle.putString("id", id);
+                        bundle.putString("gzplb", gzplb);
+                        bundle.putString("gzpbh", gzpbh);
+                        bundle.putString("gqmc", gqmc);
                         yt46TJFrag.setArguments(bundle);
                         fragmentList.add(yt46TJFrag);
                         fragmentTransaction.add(R.id.fragment_container, yt46TJFrag);
@@ -170,6 +191,9 @@ public class PiaoListDetailsActivity extends BaseActivity implements SwitchFrag.
                         xcPicFrag = new XCPicFrag();
                         Bundle bundle = new Bundle();
                         bundle.putString("id", id);
+                        bundle.putString("gzplb", gzplb);
+                        bundle.putString("gzpbh", gzpbh);
+                        bundle.putString("gqmc", gqmc);
                         xcPicFrag.setArguments(bundle);
                         fragmentList.add(xcPicFrag);
                         fragmentTransaction.add(R.id.fragment_container, xcPicFrag);

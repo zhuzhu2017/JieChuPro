@@ -1,10 +1,24 @@
 package com.jiechu.jiechupro.net;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+
+import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 import rx.Observable;
 
 /**
@@ -40,7 +54,6 @@ public interface HttpPostService {
      */
     @POST("GetdyzgzpGridJsontosearch")
     Observable<JSONObject> piaoList(@Body JSONObject object);
-
     /**
      * 获取第一种工作票详情
      *
@@ -80,10 +93,13 @@ public interface HttpPostService {
     /**
      * 现场照片
      *
-     * @param object
      * @return
      */
     @POST("xczpGetFormJson")
-    Observable<JSONObject> getXCPicData(@Body JSONObject object);
+    Observable<JSONObject> getXCPicData(@Query("gzpid") String gzpid, @Query("mid") String mid);
+
+
+    @POST("xczpGetFormJson")
+    Call<JSONObject> getXCZPData(@Query("gzpid") String gzpid, @Query("mid") String mid);
 
 }

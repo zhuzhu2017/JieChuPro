@@ -3,7 +3,7 @@ package com.jiechu.jiechupro.net.api;
 import com.jiechu.jiechupro.net.BaseApi;
 import com.jiechu.jiechupro.net.HttpOnNextListener;
 import com.jiechu.jiechupro.net.HttpPostService;
-import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
+import com.trello.rxlifecycle.components.support.RxFragment;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,8 +27,8 @@ public class TDZYMLPApi extends BaseApi {
         this.keyValue = keyValue;
     }
 
-    public TDZYMLPApi(HttpOnNextListener listener, RxAppCompatActivity rxAppCompatActivity) {
-        super(listener, rxAppCompatActivity);
+    public TDZYMLPApi(HttpOnNextListener listener, RxFragment rxFragment) {
+        super(listener, rxFragment);
     }
 
     @Override

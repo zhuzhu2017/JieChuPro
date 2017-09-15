@@ -158,7 +158,9 @@ public class PiaoListActivity extends BaseActivity {
                                     listBean.setZt(itemObject.getString("zt_desc") + "");
                                     listBean.setZydd(itemObject.getString("zydd") + "");
                                     listBean.setZynr(itemObject.getString("zynr") + "");
-                                    listBean.setId(itemObject.getString("id") + "");
+                                    listBean.setId(itemObject.has("gzpid") ? (itemObject.getString("gzpid") + "") :
+                                            itemObject.getString("id") + "");
+                                    listBean.setGzplb(itemObject.has("gzplb") ? itemObject.getString("gzplb") : "1");
                                     piaoList.add(listBean);
                                 }
                             }
@@ -191,7 +193,9 @@ public class PiaoListActivity extends BaseActivity {
                                         listBean.setZt(itemObject.getString("zt_desc") + "");
                                         listBean.setZydd(itemObject.getString("zydd") + "");
                                         listBean.setZynr(itemObject.getString("zynr") + "");
-                                        listBean.setId(itemObject.getString("id") + "");
+                                        listBean.setId(itemObject.has("gzpid") ? (itemObject.getString("gzpid") + "") :
+                                                itemObject.getString("id") + "");
+                                        listBean.setGzplb(itemObject.has("gzplb") ? itemObject.getString("gzplb") : "");
                                         piaoList.add(listBean);
                                     }
                                 }
@@ -225,6 +229,9 @@ public class PiaoListActivity extends BaseActivity {
             public void OnItemClick(int position) {
                 Bundle bundle = new Bundle();
                 bundle.putString("id", piaoList.get(position).getId());
+                bundle.putString("gzplb", piaoList.get(position).getGzplb());
+                bundle.putString("gzpbh", piaoList.get(position).getPh());
+                bundle.putString("gqmc", piaoList.get(position).getGq());
                 openActivity(PiaoListDetailsActivity.class, bundle);
             }
         });

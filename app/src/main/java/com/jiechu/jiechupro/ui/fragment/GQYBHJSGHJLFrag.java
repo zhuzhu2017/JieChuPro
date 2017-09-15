@@ -52,6 +52,9 @@ public class GQYBHJSGHJLFrag extends RxFragment {
     TextView tvDetailsXdmlsj;
 
     private String id;
+    private String gzplb;
+    private String gzpbh;
+    private String gqmc = "";
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -59,6 +62,9 @@ public class GQYBHJSGHJLFrag extends RxFragment {
         Bundle arguments = getArguments();
         if (arguments != null) {
             id = arguments.getString("id");
+            gzplb = arguments.getString("gzplb");
+            gzpbh = arguments.getString("gzpbh");
+            gqmc = arguments.getString("gqmc");
         }
     }
 
@@ -100,17 +106,17 @@ public class GQYBHJSGHJLFrag extends RxFragment {
             if (object != null) {
                 try {
                     GQYBHJSGHJLBean bean = new GQYBHJSGHJLBean();
-                    bean.setGqmc((object.getString("gqmc") + "").replace("null", ""));
-                    bean.setFprq_app((object.getString("fprq_app") + "").replace("null", ""));
-                    bean.setGzpbh((object.getString("gzpbh") + "").replace("null", ""));
-                    bean.setBqyx((object.getString("bqyx") + "").replace("null", ""));
-                    bean.setFgjl((object.getString("fgjl") + "").replace("null", ""));
-                    bean.setRwlyjwcqk_rwly((object.getString("rwlyjwcqk_rwly") + "").replace("null", ""));
-                    bean.setRwlyjwcqk_wcqk((object.getString("rwlyjwcqk_wcqk") + "").replace("null", ""));
-                    bean.setRwlyjwcqk_qt((object.getString("rwlyjwcqk_qt") + "").replace("null", ""));
-                    bean.setXdmlh((object.getString("xdmlh") + "").replace("null", ""));
-                    bean.setXdmlsj((object.getString("xdmlsj") + "").replace("null", ""));
-                    bean.setGzldr((object.getString("gzldr") + "").replace("null", ""));
+                    bean.setGqmc(object.has("gqmc") ? (object.getString("gqmc") + "").replace("null", "") : gqmc);
+                    bean.setFprq_app(object.has("fprq_app") ? (object.getString("fprq_app") + "").replace("null", "") : "");
+                    bean.setGzpbh(object.has("gzpbh") ? (object.getString("gzpbh") + "").replace("null", "") : "");
+                    bean.setBqyx(object.has("bqyx") ? (object.getString("bqyx") + "").replace("null", "") : "");
+                    bean.setFgjl(object.has("fgjl") ? (object.getString("fgjl") + "").replace("null", "") : "");
+                    bean.setRwlyjwcqk_rwly(object.has("rwlyjwcqk_rwly") ? (object.getString("rwlyjwcqk_rwly") + "").replace("null", "") : "");
+                    bean.setRwlyjwcqk_wcqk(object.has("rwlyjwcqk_wcqk") ? (object.getString("rwlyjwcqk_wcqk") + "").replace("null", "") : "");
+                    bean.setRwlyjwcqk_qt(object.has("rwlyjwcqk_qt") ? (object.getString("rwlyjwcqk_qt") + "").replace("null", "") : "");
+                    bean.setXdmlh(object.has("xdmlh") ? (object.getString("xdmlh") + "").replace("null", "") : "");
+                    bean.setXdmlsj(object.has("xdmlsj") ? (object.getString("xdmlsj") + "").replace("null", "") : "");
+                    bean.setGzldr(object.has("gzldr") ? (object.getString("gzldr") + "").replace("null", "") : "");
                     //设置数据
                     setData(bean);
                 } catch (Exception e) {

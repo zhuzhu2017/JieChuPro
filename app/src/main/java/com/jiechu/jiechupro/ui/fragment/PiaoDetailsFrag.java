@@ -1,6 +1,5 @@
 package com.jiechu.jiechupro.ui.fragment;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -75,6 +74,9 @@ public class PiaoDetailsFrag extends RxFragment {
     @BindView(R.id.tv_gq_title)
     TextView tvGqTitle;
     private String id;
+    private String gzplb;
+    private String gzpbh;
+    private String gqmc;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -82,6 +84,9 @@ public class PiaoDetailsFrag extends RxFragment {
         Bundle arguments = getArguments();
         if (arguments != null) {
             id = arguments.getString("id");
+            gzplb = arguments.getString("gzplb");
+            gzpbh = arguments.getString("gzpbh");
+            gqmc = arguments.getString("gqmc");
         }
     }
 
@@ -124,7 +129,7 @@ public class PiaoDetailsFrag extends RxFragment {
                 //设置数据
                 try {
                     PiaoDetailsBean detailsBean = new PiaoDetailsBean();
-                    detailsBean.setGqmc((object.getString("gqmc") + "").replace("null", ""));
+                    detailsBean.setGqmc(object.has("gqmc") ? (object.getString("gqmc") + "").replace("null", "") : gqmc);
                     detailsBean.setGzpbh((object.getString("gzpbh") + "").replace("null", ""));
                     detailsBean.setFpr((object.getString("fpr") + "").replace("null", ""));
                     detailsBean.setFprq_app((object.getString("fprq_app") + "").replace("null", ""));

@@ -20,6 +20,15 @@ public class PiaoListBean implements Serializable {
     private String zt;  //状态
     private String ldr; //领导人
     private String id;
+    private String gzplb;   //工作票类别
+
+    public String getGzplb() {
+        return gzplb;
+    }
+
+    public void setGzplb(String gzplb) {
+        this.gzplb = gzplb;
+    }
 
     public String getId() {
         return id;

@@ -14,7 +14,7 @@ public class YT46TjBean implements Serializable {
     //驻站联络员姓名
     private String zzlly;
     //日期
-    private String rq_app;
+    private String fprq_app;
     //登记
     private String djnr;
     //销记
@@ -38,6 +38,14 @@ public class YT46TjBean implements Serializable {
     //实际上道作业次数
     private String sjsdzycs2;
 
+    public String getFprq_app() {
+        return fprq_app;
+    }
+
+    public void setFprq_app(String fprq_app) {
+        this.fprq_app = fprq_app;
+    }
+
     public String getGqmc() {
         return gqmc;
     }
@@ -60,14 +68,6 @@ public class YT46TjBean implements Serializable {
 
     public void setZzlly(String zzlly) {
         this.zzlly = zzlly;
-    }
-
-    public String getRq_app() {
-        return rq_app;
-    }
-
-    public void setRq_app(String rq_app) {
-        this.rq_app = rq_app;
     }
 
     public String getDjnr() {

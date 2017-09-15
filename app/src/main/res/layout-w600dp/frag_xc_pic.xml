@@ -4,11 +4,56 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <!--顶部切换菜单-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/top_hroi_menu"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:scrollbars="none"
+        android:visibility="visible" />
+    <!--二级子菜单-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/top_second_menu"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:padding="@dimen/space_20"
+        android:scrollbars="none"
+        android:visibility="visible" />
+    <!--图片展示-->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="第六"
-        android:textSize="@dimen/xxxx_large_font" />
+        android:orientation="vertical">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_pic_container"
+            android:layout_width="600dp"
+            android:layout_height="300dp" />
+
+        <!--图片切换区-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/space_10">
+            <!--计数器-->
+            <TextView
+                android:id="@+id/tv_pic_sount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space_10"
+                android:text="1/10"
+                android:textColor="@color/common_blue"
+                android:textSize="@dimen/common_font" />
+            <!--图片列表-->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/lv_pics"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
