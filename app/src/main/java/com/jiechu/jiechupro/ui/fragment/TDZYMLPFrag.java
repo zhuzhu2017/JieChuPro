@@ -15,7 +15,6 @@ import com.jiechu.jiechupro.net.HttpOnNextListener;
 import com.jiechu.jiechupro.net.api.TDZYMLPApi;
 import com.trello.rxlifecycle.components.support.RxFragment;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import butterknife.BindView;
@@ -55,6 +54,9 @@ public class TDZYMLPFrag extends RxFragment {
     @BindView(R.id.tv_gq_title)
     TextView tvGqTitle;
     private String id;
+    private String gzplb;
+    private String gzpbh = "";
+    private String gqmc = "";
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -62,6 +64,9 @@ public class TDZYMLPFrag extends RxFragment {
         Bundle arguments = getArguments();
         if (arguments != null) {
             id = arguments.getString("id");
+            gzplb = arguments.getString("gzplb");
+            gzpbh = arguments.getString("gzpbh");
+            gqmc = arguments.getString("gqmc");
         }
     }
 
@@ -97,35 +102,24 @@ public class TDZYMLPFrag extends RxFragment {
             if (object != null) {
                 Log.d("结果", object.toString());
                 try {
-                    JSONArray hd_valids = object.getJSONArray("hd_valids");
-                    if (hd_valids == null || hd_valids.length() == 0) return;
-                    for (int i = 0; i < hd_valids.length(); i++) {
-                        JSONObject itemObject = hd_valids.getJSONObject(i);
-
-                    }
-//                    TDZYMLPBean bean = new TDZYMLPBean();
-//                    bean.setGzpbh((object.getString("gzpbh") + "").replace("null", ""));
-//                    bean.setMlbh((object.getString("mlbh") + "").replace("null", ""));
-//                    bean.setPzsj_app((object.getString("pzsj_app") + "").replace("null", ""));
-//                    bean.setMlnr((object.getString("mlnr") + "").replace("null", ""));
-//                    bean.setWcsj_app((object.getString("wcsj_app") + "").replace("null", ""));
-//                    bean.setFlr((object.getString("flr") + "").replace("null", ""));
-//                    bean.setSlr((object.getString("slr") + "").replace("null", ""));
-//                    bean.setXlsj_app((object.getString("xlsj_app") + "").replace("null", ""));
-//                    bean.setXlr((object.getString("xlr") + "").replace("null", ""));
-//                    bean.setGdddy((object.getString("gdddy") + "").replace("null", ""));
+                    TDZYMLPBean bean = new TDZYMLPBean();
+                    bean.setGqmc(object.has("gqmc") ? (object.getString("gqmc") + "").replace("null", "") : gqmc);
+                    bean.setGzpbh(object.has("gzpbh") ? (object.getString("gzpbh") + "").replace("null", "") : gzpbh);
+                    bean.setMlbh(object.has("mlbh") ? (object.getString("mlbh") + "").replace("null", "") : "");
+                    bean.setPzsj_app(object.has("pzsj_app") ? (object.getString("pzsj_app") + "").replace("null", "") : "");
+                    bean.setMlnr(object.has("mlnr") ? (object.getString("mlnr") + "").replace("null", "") : "");
+                    bean.setWcsj_app(object.has("wcsj_app") ? (object.getString("wcsj_app") + "").replace("null", "") : "");
+                    bean.setFlr(object.has("flr") ? (object.getString("flr") + "").replace("null", "") : "");
+                    bean.setSlr(object.has("slr") ? (object.getString("slr") + "").replace("null", "") : "");
+                    bean.setXlsj_app(object.has("xlsj_app") ? (object.getString("xlsj_app") + "").replace("null", "") : "");
+                    bean.setXlr(object.has("xlr") ? (object.getString("xlr") + "").replace("null", "") : "");
+                    bean.setGdddy(object.has("gdddy") ? (object.getString("gdddy") + "").replace("null", "") : "");
                     //设置数据
-//                    setData(bean);
+                    setData(bean);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
-        }
-
-        @Override
-        public void onError(Throwable e) {
-            super.onError(e);
-            Log.d("结果错误", e.getMessage());
         }
     };
 

@@ -130,24 +130,24 @@ public class PiaoDetailsFrag extends RxFragment {
                 try {
                     PiaoDetailsBean detailsBean = new PiaoDetailsBean();
                     detailsBean.setGqmc(object.has("gqmc") ? (object.getString("gqmc") + "").replace("null", "") : gqmc);
-                    detailsBean.setGzpbh((object.getString("gzpbh") + "").replace("null", ""));
-                    detailsBean.setFpr((object.getString("fpr") + "").replace("null", ""));
-                    detailsBean.setFprq_app((object.getString("fprq_app") + "").replace("null", ""));
-                    detailsBean.setGzldr_aqdj((object.getString("gzldr_aqdj") + "").replace("null", ""));
-                    detailsBean.setFsfw((object.getString("fsfw") + "").replace("null", ""));
-                    detailsBean.setZydd((object.getString("zydd") + "").replace("null", ""));
-                    detailsBean.setZynr((object.getString("zynr") + "").replace("null", ""));
-                    detailsBean.setGzpyxqqd_app((object.getString("gzpyxqqd_app") + "").replace("null", ""));
-                    detailsBean.setGzpyxqzd_app((object.getString("gzpyxqzd_app") + "").replace("null", ""));
-                    detailsBean.setSj_select((object.getString("sj_select") + "").replace("null", ""));
-                    detailsBean.setZyzcy_list((object.getString("zyzcy_list") + "").replace("null", ""));
-                    detailsBean.setWbcy_list((object.getString("wbcy_list") + "").replace("null", ""));
-                    detailsBean.setXtdsb((object.getString("xtdsb") + "").replace("null", ""));
-                    detailsBean.setZsdxwz((object.getString("zsdxwz") + "").replace("null", ""));
-                    detailsBean.setZyqfhcs((object.getString("zyqfhcs") + "").replace("null", ""));
-                    detailsBean.setQtaqcs((object.getString("qtaqcs") + "").replace("null", ""));
-                    detailsBean.setGzpldrqz((object.getString("gzpldrqz") + "").replace("null", ""));
-                    detailsBean.setFprqz((object.getString("fprqz") + "").replace("null", ""));
+                    detailsBean.setGzpbh(object.has("gzpbh") ? (object.getString("gzpbh") + "").replace("null", "") : gzpbh);
+                    detailsBean.setFpr(object.has("fpr") ? (object.getString("fpr") + "").replace("null", "") : "");
+                    detailsBean.setFprq_app(object.has("fprq_app") ? (object.getString("fprq_app") + "").replace("null", "") : "");
+                    detailsBean.setGzldr_aqdj(object.has("gzldr_aqdj") ? (object.getString("gzldr_aqdj") + "").replace("null", "") : "");
+                    detailsBean.setFsfw(object.has("fsfw") ? (object.getString("fsfw") + "").replace("null", "") : "");
+                    detailsBean.setZydd(object.has("zydd") ? (object.getString("zydd") + "").replace("null", "") : "");
+                    detailsBean.setZynr(object.has("zynr") ? (object.getString("zynr") + "").replace("null", "") : "");
+                    detailsBean.setGzpyxqqd_app(object.has("gzpyxqqd_app") ? (object.getString("gzpyxqqd_app") + "").replace("null", "") : "");
+                    detailsBean.setGzpyxqzd_app(object.has("gzpyxqzd_app") ? (object.getString("gzpyxqzd_app") + "").replace("null", "") : "");
+                    detailsBean.setSj_select(object.has("sj_select") ? (object.getString("sj_select") + "").replace("null", "") : "");
+                    detailsBean.setZyzcy_list(object.has("zyzcy_list") ? (object.getString("zyzcy_list") + "").replace("null", "") : "");
+                    detailsBean.setWbcy_list(object.has("wbcy_list") ? (object.getString("wbcy_list") + "").replace("null", "") : "");
+                    detailsBean.setXtdsb(object.has("xtdsb") ? (object.getString("xtdsb") + "").replace("null", "") : "");
+                    detailsBean.setZsdxwz(object.has("zsdxwz") ? (object.getString("zsdxwz") + "").replace("null", "") : "");
+                    detailsBean.setZyqfhcs(object.has("zyqfhcs") ? (object.getString("zyqfhcs") + "").replace("null", "") : "");
+                    detailsBean.setQtaqcs(object.has("qtaqcs") ? (object.getString("qtaqcs") + "").replace("null", "") : "");
+                    detailsBean.setGzpldrqz(object.has("gzpldrqz") ? (object.getString("gzpldrqz") + "").replace("null", "") : "");
+                    detailsBean.setFprqz(object.has("fprqz") ? (object.getString("fprqz") + "").replace("null", "") : "");
                     //设置数据
                     setData(detailsBean);
                 } catch (Exception e) {
@@ -166,7 +166,7 @@ public class PiaoDetailsFrag extends RxFragment {
         //工区设置
         tvGqTitle.setText(detailsBean.getGqmc());
         //工作票编号
-        tvPiaoNum.setText(detailsBean.getGzpbh());
+        tvPiaoNum.setText("第" + detailsBean.getGzpbh() + "号");
         //发票人
         tvDetailsFpr.setText(detailsBean.getFpr());
         //发票时间

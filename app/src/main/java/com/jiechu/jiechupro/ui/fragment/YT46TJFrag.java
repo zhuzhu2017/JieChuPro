@@ -72,8 +72,8 @@ public class YT46TJFrag extends RxFragment {
 
     private String id;
     private String gzplb;
-    private String gzpbh;
-    private String gqmc;
+    private String gzpbh = "";
+    private String gqmc = "";
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -120,10 +120,10 @@ public class YT46TJFrag extends RxFragment {
                 Log.d("结果", object.toString());
                 try {
                     YT46TjBean bean = new YT46TjBean();
-                    bean.setGqmc(!object.has("gqmc") ? "" : (object.getString("gqmc") + "").replace("null", ""));
-                    bean.setGzpbh(!object.has("gzpbh") ? "" : (object.getString("gzpbh") + "").replace("null", ""));
+                    bean.setGqmc(!object.has("gqmc") ? gqmc : (object.getString("gqmc") + "").replace("null", ""));
+                    bean.setGzpbh(!object.has("gzpbh") ? gzpbh : (object.getString("gzpbh") + "").replace("null", ""));
                     bean.setZzlly(!object.has("zzlly") ? "" : (object.getString("zzlly") + "").replace("null", ""));
-                    bean.setFprq_app(!object.has("fprq_app") ? "" : (object.getString("fprq_app") + "").replace("null", ""));
+                    bean.setFprq_app(!object.has("rq_app") ? "" : (object.getString("rq_app") + "").replace("null", ""));
                     bean.setDjnr(!object.has("djnr") ? "" : (object.getString("djnr") + "").replace("null", ""));
                     bean.setXjnr(!object.has("xjnr") ? "" : (object.getString("xjnr") + "").replace("null", ""));
                     bean.setFhbdjzycs1(!object.has("fhbdjzycs1") ? "" : (object.getString("fhbdjzycs1") + "").replace("null", ""));

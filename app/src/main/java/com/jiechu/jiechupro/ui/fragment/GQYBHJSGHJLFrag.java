@@ -135,7 +135,7 @@ public class GQYBHJSGHJLFrag extends RxFragment {
         //发票日期
         tvGqName.setText(bean.getFprq_app());
         //工作票编号
-        tvPiaoNum.setText(bean.getGzpbh());
+        tvPiaoNum.setText("第" + bean.getGzpbh() + "号");
         //工前预想
         tvDetailsGqyx.setText(bean.getBqyx());
         //分工记录
