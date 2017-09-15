@@ -41,8 +41,8 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/top_second_menu"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:padding="@dimen/space_20"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_20"
         android:scrollbars="none"
         android:visibility="visible" />
     <!--图片展示分为横向和纵向-->

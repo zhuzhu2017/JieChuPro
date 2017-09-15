@@ -36,6 +36,15 @@ public class XCPicBean implements Serializable {
         private String Url_CZXL_ICON;   //水平图缩略图
         private String Url_SXL; //垂直图
         private String Url_SXL_ICON;    //垂直缩略图
+        private boolean isSelected;
+
+        public boolean isSelected() {
+            return isSelected;
+        }
+
+        public void setSelected(boolean selected) {
+            isSelected = selected;
+        }
 
         public String getInnerName() {
             return innerName;

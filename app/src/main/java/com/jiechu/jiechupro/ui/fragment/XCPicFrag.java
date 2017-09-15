@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 
 import com.jiechu.jiechupro.R;
 import com.jiechu.jiechupro.adapter.TopHoriMenuAdapter;
+import com.jiechu.jiechupro.adapter.TopSonMenuAdapter;
 import com.jiechu.jiechupro.model.XCPicBean;
 import com.jiechu.jiechupro.net.HttpManager;
 import com.jiechu.jiechupro.net.HttpOnNextListener;
@@ -76,6 +78,7 @@ public class XCPicFrag extends RxFragment implements TopHoriMenuAdapter.OnRecycl
     private List<XCPicBean> parentPicList = new ArrayList<>();
 
     private TopHoriMenuAdapter topHoriMenuAdapter;  //顶部横向菜单填充adapter
+    private TopSonMenuAdapter topSonMenuAdapter;  //顶部子菜单填充adapter
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -164,12 +167,32 @@ public class XCPicFrag extends RxFragment implements TopHoriMenuAdapter.OnRecycl
     /**
      * 设置数据
      */
+    private List<XCPicBean.Pictures> picturesList;
+
     private void setData() {
-        //设置横向一级菜单
+        //设置横向一级菜单,初始化选中第一个
         topHoriMenuAdapter = new TopHoriMenuAdapter(ctx, parentPicList);
         topHroiMenu.setAdapter(topHoriMenuAdapter);
         //添加点击事件
         topHoriMenuAdapter.setOnItemClickListener(this);
+        //初始化子菜单
+        if (parentPicList.size() > 0) {
+            picturesList = parentPicList.get(0).getPicturesList();
+            //默认第一个选中
+            if (picturesList != null && picturesList.size() > 0) {
+                for (int i = 0; i < picturesList.size(); i++) {
+                    if (i == 0) {
+                        picturesList.get(i).setSelected(true);
+                    } else {
+                        picturesList.get(i).setSelected(false);
+                    }
+                }
+            }
+        }
+        topSonMenuAdapter = new TopSonMenuAdapter(ctx, picturesList);
+        topSecondMenu.setAdapter(topSonMenuAdapter);
+
+
         //先根据条件筛选数据
 //        for (int i = 0; i < parentPicList.size(); i++) {
 //            XCPicBean xcPicBean = parentPicList.get(i);
@@ -220,10 +243,16 @@ public class XCPicFrag extends RxFragment implements TopHoriMenuAdapter.OnRecycl
         }
     }
 
+    private int oldPos;
+
     @Override
     public void onItemClick(View view, int position) {
         //刷新菜单选中状态
         if (topHoriMenuAdapter != null) topHoriMenuAdapter.changeSelected(position);
         //TODO
+        if (oldPos != position) {
+            Log.d("点击事件", "点击了" + position);
+        }
+        oldPos = position;
     }
 }
