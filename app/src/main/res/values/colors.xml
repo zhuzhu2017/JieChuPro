@@ -13,4 +13,5 @@
     <color name="gray">#666</color>
     <color name="light_gray">#999</color>
     <color name="filter_bg">#E8EFF5</color>
+    <color name="top_tab_bg">#E1EEFE</color>
 </resources>

@@ -5,12 +5,38 @@
     android:orientation="vertical">
 
     <!--顶部切换菜单-->
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/top_hroi_menu"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:scrollbars="none"
-        android:visibility="visible" />
+        android:layout_height="wrap_content"
+        android:background="@color/top_tab_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/top_hroi_menu"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:scrollbars="none"
+            android:visibility="visible" />
+
+        <!--布局切换按钮-->
+        <TextView
+            android:id="@+id/tv_layout_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/space_10"
+            android:background="@drawable/shape_four_corner_blue"
+            android:gravity="center"
+            android:paddingBottom="@dimen/space_5"
+            android:paddingLeft="@dimen/space_15"
+            android:paddingRight="@dimen/space_15"
+            android:paddingTop="@dimen/space_5"
+            android:text="横向"
+            android:textColor="@color/white"
+            android:textSize="@dimen/xx_large_font" />
+
+    </LinearLayout>
     <!--二级子菜单-->
     <android.support.v7.widget.RecyclerView
         android:id="@+id/top_second_menu"
@@ -19,41 +45,157 @@
         android:padding="@dimen/space_20"
         android:scrollbars="none"
         android:visibility="visible" />
-    <!--图片展示-->
-    <LinearLayout
+    <!--图片展示分为横向和纵向-->
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <android.support.v4.view.ViewPager
-            android:id="@+id/vp_pic_container"
-            android:layout_width="600dp"
-            android:layout_height="300dp" />
-
-        <!--图片切换区-->
+        android:layout_height="match_parent">
+        <!--横向-->
         <LinearLayout
+            android:id="@+id/ll_hori_pic"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="@dimen/space_10">
-            <!--计数器-->
-            <TextView
-                android:id="@+id/tv_pic_sount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/space_10"
-                android:text="1/10"
-                android:textColor="@color/common_blue"
-                android:textSize="@dimen/common_font" />
-            <!--图片列表-->
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/lv_pics"
+            android:visibility="gone">
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:gravity="center">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/vp_hori_pic_container"
+                    android:layout_width="533dp"
+                    android:layout_height="300dp" />
+
+            </LinearLayout>
+
+            <!--图片切换区-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <!--图标-->
+                <ImageView
+                    android:id="@+id/iv_hori_left_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/space_10"
+                    android:src="@mipmap/icon_arrow_left" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="@dimen/space_10">
+                    <!--计数器-->
+                    <TextView
+                        android:id="@+id/tv_hori_pic_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/space_10"
+                        android:text="1/10"
+                        android:textColor="@color/common_blue"
+                        android:textSize="@dimen/common_font" />
+                    <!--图片列表-->
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/lv_hori_icon_pics"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+                <!--图标-->
+                <ImageView
+                    android:id="@+id/iv_hori_right_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/space_10"
+                    android:src="@mipmap/icon_arrow_right" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <!--纵向-->
+        <LinearLayout
+            android:id="@+id/ll_vertical_pic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:weightSum="1">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/vp_vertical_pic_container"
+                    android:layout_width="250dp"
+                    android:layout_height="400dp"
+                    android:layout_gravity="center" />
+
+                <!--计数器-->
+                <TextView
+                    android:id="@+id/tv_vertical_pic_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginBottom="@dimen/space_10"
+                    android:padding="@dimen/space_10"
+                    android:text="1/10"
+                    android:textColor="@color/common_blue"
+                    android:textSize="@dimen/common_font" />
+
+            </FrameLayout>
+
+            <!--图片切换区-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!--图标-->
+                <ImageView
+                    android:id="@+id/iv_vertical_up_arrow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_10"
+                    android:src="@mipmap/icon_arrow_up" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/space_10">
+
+                    <!--图片列表-->
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/lv_vertical_icon_pics"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+                <!--图标-->
+                <ImageView
+                    android:id="@+id/iv_vertical_down_arrow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_10"
+                    android:src="@mipmap/icon_arrow_down" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
+    </FrameLayout>
 
 </LinearLayout>
