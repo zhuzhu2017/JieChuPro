@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.jiechu.jiechupro.R;
+import com.jiechu.jiechupro.adapter.TopHoriMenuAdapter;
 import com.jiechu.jiechupro.model.XCPicBean;
 import com.jiechu.jiechupro.net.HttpManager;
 import com.jiechu.jiechupro.net.HttpOnNextListener;
@@ -36,7 +37,7 @@ import butterknife.Unbinder;
  * Created by allen on 2017/9/12.
  */
 
-public class XCPicFrag extends RxFragment {
+public class XCPicFrag extends RxFragment implements TopHoriMenuAdapter.OnRecyclerViewItemClickListener {
 
     @BindView(R.id.top_hroi_menu)
     RecyclerView topHroiMenu;
@@ -73,6 +74,8 @@ public class XCPicFrag extends RxFragment {
     private String id;
     //整体图片集合
     private List<XCPicBean> parentPicList = new ArrayList<>();
+
+    private TopHoriMenuAdapter topHoriMenuAdapter;  //顶部横向菜单填充adapter
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -162,6 +165,11 @@ public class XCPicFrag extends RxFragment {
      * 设置数据
      */
     private void setData() {
+        //设置横向一级菜单
+        topHoriMenuAdapter = new TopHoriMenuAdapter(ctx, parentPicList);
+        topHroiMenu.setAdapter(topHoriMenuAdapter);
+        //添加点击事件
+        topHoriMenuAdapter.setOnItemClickListener(this);
         //先根据条件筛选数据
 //        for (int i = 0; i < parentPicList.size(); i++) {
 //            XCPicBean xcPicBean = parentPicList.get(i);
@@ -210,5 +218,12 @@ public class XCPicFrag extends RxFragment {
             case R.id.iv_vertical_down_arrow:
                 break;
         }
+    }
+
+    @Override
+    public void onItemClick(View view, int position) {
+        //刷新菜单选中状态
+        if (topHoriMenuAdapter != null) topHoriMenuAdapter.changeSelected(position);
+        //TODO
     }
 }

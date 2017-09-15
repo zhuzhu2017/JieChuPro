@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/space_50"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/space_10"
+    android:paddingRight="@dimen/space_10">
+
+    <TextView
+        android:id="@+id/tv_horizon_index"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/space_48"
+        android:gravity="center_vertical"
+        android:text=""
+        android:textColor="@color/common_blue"
+        android:textSize="@dimen/xx_large_font" />
+
+    <View
+        android:id="@+id/bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_2"
+        android:background="@color/common_blue"
+        android:visibility="gone" />
+
+</LinearLayout>
