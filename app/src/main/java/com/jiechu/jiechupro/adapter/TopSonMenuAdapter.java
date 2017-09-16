@@ -29,6 +29,15 @@ public class TopSonMenuAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(ctx).inflate(R.layout.item_son_menu, parent, false);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mOnItemClickListener != null) {
+                    //注意这里使用getTag方法获取数据
+                    mOnItemClickListener.onItemClick(view, (Integer) view.getTag());
+                }
+            }
+        });
         return new ItemViewHolder(view);
     }
 
@@ -45,6 +54,7 @@ public class TopSonMenuAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 ((ItemViewHolder) holder).tv_menu_item.setBackgroundResource(R.drawable.shape_oval_stroke_blue);
                 ((ItemViewHolder) holder).tv_menu_item.setTextColor(ctx.getResources().getColor(R.color.common_blue));
             }
+            holder.itemView.setTag(position);
         }
     }
 
@@ -66,6 +76,16 @@ public class TopSonMenuAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     public void upDateList(List<XCPicBean.Pictures> picturesList) {
         this.picturesList = picturesList;
         notifyDataSetChanged();
+    }
+
+    public void setOnItemClickListener(OnRecyclerViewItemClickListener listener) {
+        this.mOnItemClickListener = listener;
+    }
+
+    private OnRecyclerViewItemClickListener mOnItemClickListener;
+
+    public interface OnRecyclerViewItemClickListener {
+        void onItemClick(View view, int position);
     }
 
 }

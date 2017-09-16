@@ -1,6 +1,7 @@
 package com.jiechu.jiechupro.adapter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import com.facebook.drawee.generic.RoundingParams;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.jiechu.jiechupro.R;
 import com.jiechu.jiechupro.model.XCPicBean;
+import com.jiechu.jiechupro.ui.PicActivity;
 import com.jiechu.jiechupro.utils.DisplayUtil;
 import com.jiechu.jiechupro.utils.FrescoUtils;
 
@@ -42,7 +44,7 @@ public class HoriPagerAdapter extends PagerAdapter {
     }
 
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(ViewGroup container, final int position) {
         SimpleDraweeView imageView = new SimpleDraweeView(ctx);
         ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(DisplayUtil.dip2px(ctx, 500), ViewGroup.LayoutParams.MATCH_PARENT);
         imageView.setLayoutParams(layoutParams);
@@ -60,6 +62,15 @@ public class HoriPagerAdapter extends PagerAdapter {
                 .setFailureImageScaleType(ScalingUtils.ScaleType.FIT_XY)
                 .build();
         imageView.setHierarchy(hierarchy);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //跳转到大图页面
+                Intent picIntent = new Intent(ctx, PicActivity.class);
+                picIntent.putExtra("url", picturesList.get(position).getUrl_CZXL());
+                ctx.startActivity(picIntent);
+            }
+        });
         XCPicBean.Pictures pictures = picturesList.get(position);
         //设置图片显示
         FrescoUtils.setCommonPic(pictures.getUrl_CZXL(), imageView);

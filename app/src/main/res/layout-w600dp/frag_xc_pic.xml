@@ -35,7 +35,8 @@
             android:paddingTop="@dimen/space_5"
             android:text="横向"
             android:textColor="@color/white"
-            android:textSize="@dimen/xx_large_font" />
+            android:textSize="@dimen/xx_large_font"
+            android:visibility="gone" />
 
     </LinearLayout>
     <!--二级子菜单-->
@@ -77,7 +78,7 @@
             <!--图片切换区-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
+                android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 

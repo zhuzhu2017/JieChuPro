@@ -30,6 +30,14 @@ public class HoriIconPicAdapter extends RecyclerView.Adapter<HoriIconPicAdapter.
     @Override
     public HoriIconViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(ctx).inflate(R.layout.item_hori_icon, parent, false);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (onHoriIconClickedListener != null) {
+                    onHoriIconClickedListener.onItemClicked(view, (Integer) view.getTag());
+                }
+            }
+        });
         return new HoriIconViewHolder(view);
     }
 
@@ -41,13 +49,19 @@ public class HoriIconPicAdapter extends RecyclerView.Adapter<HoriIconPicAdapter.
         if (selected) {
             holder.view_selected.setVisibility(View.VISIBLE);
         } else {
-            holder.view_selected.setVisibility(View.GONE);
+            holder.view_selected.setVisibility(View.INVISIBLE);
         }
+        holder.itemView.setTag(position);
     }
 
     @Override
     public int getItemCount() {
         return picturesList == null ? 0 : picturesList.size();
+    }
+
+    public void updateList(List<XCPicBean.Pictures> picturesList) {
+        this.picturesList = picturesList;
+        notifyDataSetChanged();
     }
 
     public class HoriIconViewHolder extends RecyclerView.ViewHolder {
@@ -60,6 +74,16 @@ public class HoriIconPicAdapter extends RecyclerView.Adapter<HoriIconPicAdapter.
             iv_hori_icon = itemView.findViewById(R.id.iv_hori_icon);
             view_selected = itemView.findViewById(R.id.view_selected);
         }
+    }
+
+    public void setIOnHoriIconClickedListener(IOnHoriIconClickedListener onHoriIconClickedListener) {
+        this.onHoriIconClickedListener = onHoriIconClickedListener;
+    }
+
+    private IOnHoriIconClickedListener onHoriIconClickedListener;
+
+    public interface IOnHoriIconClickedListener {
+        void onItemClicked(View view, int position);
     }
 
 }

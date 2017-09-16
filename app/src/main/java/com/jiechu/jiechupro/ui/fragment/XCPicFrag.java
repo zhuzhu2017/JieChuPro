@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -182,52 +181,86 @@ public class XCPicFrag extends RxFragment implements TopHoriMenuAdapter.OnRecycl
         //初始化子菜单
         if (parentPicList.size() > 0) {
             picturesList = parentPicList.get(0).getPicturesList();
-            //默认第一个选中
-            if (picturesList != null && picturesList.size() > 0) {
-                for (int i = 0; i < picturesList.size(); i++) {
-                    if (i == 0) {
-                        picturesList.get(i).setSelected(true);
-                    } else {
-                        picturesList.get(i).setSelected(false);
-                    }
+        }
+        //设置父菜单中数据显示
+        setSonData();
+    }
+
+    private void setSonData() {
+        //默认第一个选中
+        if (picturesList != null && picturesList.size() > 0) {
+            for (int i = 0; i < picturesList.size(); i++) {
+                if (i == 0) {
+                    picturesList.get(i).setSelected(true);
+                } else {
+                    picturesList.get(i).setSelected(false);
                 }
             }
+            topSonMenuAdapter = new TopSonMenuAdapter(ctx, picturesList);
+            topSecondMenu.setAdapter(topSonMenuAdapter);
+            //初始化横向索引
+            iconPicAdapter = new HoriIconPicAdapter(ctx, picturesList);
+            lvHoriIconPics.setAdapter(iconPicAdapter);
+            //初始化ViewPager
+            horiPagerAdapter = new HoriPagerAdapter(ctx, picturesList);
+            vpHoriPicContainer.setAdapter(horiPagerAdapter);
+            //初始化计数器
+            tvHoriPicCount.setText("1/" + picturesList.size());
+            //设置监听
+            initListener();
         }
-        topSonMenuAdapter = new TopSonMenuAdapter(ctx, picturesList);
-        topSecondMenu.setAdapter(topSonMenuAdapter);
-        //初始化横向索引
-        iconPicAdapter = new HoriIconPicAdapter(ctx, picturesList);
-        lvHoriIconPics.setAdapter(iconPicAdapter);
-        //初始化ViewPager
-        horiPagerAdapter = new HoriPagerAdapter(ctx, picturesList);
-        vpHoriPicContainer.setAdapter(horiPagerAdapter);
+    }
 
-        //先根据条件筛选数据
-//        for (int i = 0; i < parentPicList.size(); i++) {
-//            XCPicBean xcPicBean = parentPicList.get(i);
-//            List<XCPicBean.Pictures> picturesList = xcPicBean.getPicturesList();
-//            Map<XCPicBean.Pictures, Integer> picturesMap = new HashMap<>();
-//            //将数据都存放到Map集合中
-//            for (XCPicBean.Pictures pictureBean :
-//                    picturesList) {
-//                int j = 1;
-//                if (picturesMap.get(pictureBean) != null) {
-//                    j = picturesMap.get(pictureBean) + 1;
-//                }
-//                picturesMap.put(pictureBean, j);
-//            }
-//            //遍历HashMap,获取元素的信息和个数
-//            Iterator<Map.Entry<XCPicBean.Pictures, Integer>> iterator = picturesMap.entrySet().iterator();
-//            //循环
-//            String textString = "";
-//            while (iterator.hasNext()) {
-//                Map.Entry<XCPicBean.Pictures, Integer> entry = iterator.next();
-//                XCPicBean.Pictures picture = entry.getKey();
-//                Integer integer = entry.getValue();
-//                textString = picture.getInnerName() + "===" + integer + ";";
-//                Log.d("筛选", textString);
-//            }
-//        }
+    /**
+     * 设置监听
+     */
+    private void initListener() {
+        //ViewPager切换监听
+        vpHoriPicContainer.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                if (picturesList != null) {
+                    //设置计数器显示
+                    tvHoriPicCount.setText(position + 1 + "/" + picturesList.size());
+                    //设置顶部二级菜单切换
+                    for (int i = 0; i < picturesList.size(); i++) {
+                        picturesList.get(i).setSelected(false);
+                    }
+                    picturesList.get(position).setSelected(true);
+                    topSonMenuAdapter.upDateList(picturesList);
+                    iconPicAdapter.updateList(picturesList);
+                    lvHoriIconPics.smoothScrollToPosition(position);
+                    topSecondMenu.smoothScrollToPosition(position);
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+        //顶部二级菜单条目点击
+        topSonMenuAdapter.setOnItemClickListener(new TopSonMenuAdapter.OnRecyclerViewItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                //设置ViewPager选中
+                vpHoriPicContainer.setCurrentItem(position, true);
+            }
+        });
+        //横向图片索引条目点击
+        iconPicAdapter.setIOnHoriIconClickedListener(new HoriIconPicAdapter.IOnHoriIconClickedListener() {
+            @Override
+            public void onItemClicked(View view, int position) {
+                horiPos = position;
+                //设置ViewPager选中
+                vpHoriPicContainer.setCurrentItem(position, true);
+            }
+        });
     }
 
     @Override
@@ -236,14 +269,26 @@ public class XCPicFrag extends RxFragment implements TopHoriMenuAdapter.OnRecycl
         unbinder.unbind();
     }
 
+    private int horiPos = 0;    //初始化在第一个
+
     @OnClick({R.id.tv_layout_switch, R.id.iv_hori_left_arrow, R.id.iv_hori_right_arrow, R.id.iv_vertical_up_arrow, R.id.iv_vertical_down_arrow})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_layout_switch:
                 break;
-            case R.id.iv_hori_left_arrow:
+            case R.id.iv_hori_left_arrow:   //点击一次向左切换一个
+                if (horiPos > 0) {
+                    //设置View Pager选中状态
+                    vpHoriPicContainer.setCurrentItem(horiPos - 1, true);
+                    horiPos--;
+                }
                 break;
-            case R.id.iv_hori_right_arrow:
+            case R.id.iv_hori_right_arrow:  //点击一次向右切换一个
+                if (horiPos < picturesList.size() - 1) {
+                    //设置View Pager选中状态
+                    vpHoriPicContainer.setCurrentItem(horiPos + 1, true);
+                    horiPos++;
+                }
                 break;
             case R.id.iv_vertical_up_arrow:
                 break;
@@ -258,9 +303,12 @@ public class XCPicFrag extends RxFragment implements TopHoriMenuAdapter.OnRecycl
     public void onItemClick(View view, int position) {
         //刷新菜单选中状态
         if (topHoriMenuAdapter != null) topHoriMenuAdapter.changeSelected(position);
-        //TODO
         if (oldPos != position) {
-            Log.d("点击事件", "点击了" + position);
+            //切换顶部父菜单时刷新整个布局数据
+            if (parentPicList.get(position) != null) {
+                picturesList = parentPicList.get(position).getPicturesList();
+                setSonData();
+            }
         }
         oldPos = position;
     }

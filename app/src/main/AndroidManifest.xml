@@ -35,6 +35,10 @@
         <activity
             android:name=".ui.PiaoListDetailsActivity"
             android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.PicActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/MyDialogStyle" />
     </application>
 
 </manifest>
