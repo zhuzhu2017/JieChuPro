@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.jiechu.jiechupro.R;
+import com.jiechu.jiechupro.adapter.HoriIconPicAdapter;
 import com.jiechu.jiechupro.adapter.TopHoriMenuAdapter;
 import com.jiechu.jiechupro.adapter.TopSonMenuAdapter;
 import com.jiechu.jiechupro.model.XCPicBean;
@@ -79,6 +80,7 @@ public class XCPicFrag extends RxFragment implements TopHoriMenuAdapter.OnRecycl
 
     private TopHoriMenuAdapter topHoriMenuAdapter;  //顶部横向菜单填充adapter
     private TopSonMenuAdapter topSonMenuAdapter;  //顶部子菜单填充adapter
+    private HoriIconPicAdapter iconPicAdapter;  //横向图片索引填充adapter
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -191,6 +193,9 @@ public class XCPicFrag extends RxFragment implements TopHoriMenuAdapter.OnRecycl
         }
         topSonMenuAdapter = new TopSonMenuAdapter(ctx, picturesList);
         topSecondMenu.setAdapter(topSonMenuAdapter);
+        //初始化横向索引
+        iconPicAdapter = new HoriIconPicAdapter(ctx, picturesList);
+        lvHoriIconPics.setAdapter(iconPicAdapter);
 
 
         //先根据条件筛选数据

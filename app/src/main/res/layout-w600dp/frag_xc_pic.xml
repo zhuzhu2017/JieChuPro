@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <!--顶部切换菜单-->
@@ -41,8 +42,11 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/top_second_menu"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/space_20"
+        android:layout_height="@dimen/space_50"
+        android:layout_marginBottom="@dimen/space_20"
+        android:layout_marginLeft="@dimen/space_10"
+        android:layout_marginRight="@dimen/space_10"
+        android:layout_marginTop="@dimen/space_10"
         android:scrollbars="none"
         android:visibility="visible" />
     <!--图片展示分为横向和纵向-->
@@ -55,26 +59,27 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:gravity="center">
 
                 <android.support.v4.view.ViewPager
                     android:id="@+id/vp_hori_pic_container"
-                    android:layout_width="533dp"
-                    android:layout_height="300dp" />
+                    android:layout_width="500dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
 
             </LinearLayout>
 
             <!--图片切换区-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="140dp"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <!--图标-->
@@ -82,12 +87,13 @@
                     android:id="@+id/iv_hori_left_arrow"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/space_15"
                     android:padding="@dimen/space_10"
                     android:src="@mipmap/icon_arrow_left" />
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:padding="@dimen/space_10">
@@ -113,6 +119,7 @@
                     android:id="@+id/iv_hori_right_arrow"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/space_15"
                     android:padding="@dimen/space_10"
                     android:src="@mipmap/icon_arrow_right" />
 
