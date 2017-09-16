@@ -53,7 +53,7 @@ public class GQYBHJSGHJLFrag extends RxFragment {
 
     private String id;
     private String gzplb;
-    private String gzpbh;
+    private String gzpbh = "";
     private String gqmc = "";
 
     @Override
@@ -108,7 +108,7 @@ public class GQYBHJSGHJLFrag extends RxFragment {
                     GQYBHJSGHJLBean bean = new GQYBHJSGHJLBean();
                     bean.setGqmc(object.has("gqmc") ? (object.getString("gqmc") + "").replace("null", "") : gqmc);
                     bean.setFprq_app(object.has("fprq_app") ? (object.getString("fprq_app") + "").replace("null", "") : "");
-                    bean.setGzpbh(object.has("gzpbh") ? (object.getString("gzpbh") + "").replace("null", "") : "");
+                    bean.setGzpbh(object.has("gzpbh") ? (object.getString("gzpbh") + "").replace("null", "") : gzpbh);
                     bean.setBqyx(object.has("bqyx") ? (object.getString("bqyx") + "").replace("null", "") : "");
                     bean.setFgjl(object.has("fgjl") ? (object.getString("fgjl") + "").replace("null", "") : "");
                     bean.setRwlyjwcqk_rwly(object.has("rwlyjwcqk_rwly") ? (object.getString("rwlyjwcqk_rwly") + "").replace("null", "") : "");

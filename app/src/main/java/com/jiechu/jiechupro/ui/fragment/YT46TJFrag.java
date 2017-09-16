@@ -129,6 +129,7 @@ public class YT46TJFrag extends RxFragment {
                     bean.setFhbdjzycs1(!object.has("fhbdjzycs1") ? "" : (object.getString("fhbdjzycs1") + "").replace("null", ""));
                     bean.setSjyglccs1(!object.has("sjyglccs1") ? "" : (object.getString("sjyglccs1") + "").replace("null", ""));
                     bean.setTqxdcs1(!object.has("tqxdcs1") ? "" : (object.getString("tqxdcs1") + "").replace("null", ""));
+                    bean.setSjsdzycs1(!object.has("sjsdzycs1") ? "" : (object.getString("sjsdzycs1") + "").replace("null", ""));
                     bean.setTgbxlccs1(!object.has("tgbxlccs1") ? "" : (object.getString("tgbxlccs1") + "").replace("null", ""));
                     bean.setTgzyddgjlccs1(!object.has("tgzyddgjlccs1") ? "" : (object.getString("tgzyddgjlccs1") + "").replace("null", ""));
                     bean.setFhbdjzycs2(!object.has("fhbdjzycs2") ? "" : (object.getString("fhbdjzycs2") + "").replace("null", ""));
@@ -163,6 +164,8 @@ public class YT46TJFrag extends RxFragment {
         tvDetailsSjyglccs.setText(bean.getSjyglccs1());
         //提前10分钟下道次数
         tvDetailsXdcs.setText(bean.getTqxdcs1());
+        //实际上道作业次数
+        tvDetailsSjsdcs.setText(bean.getSjsdzycs1());
         //通过本线（邻线）列车次数
         tvDetailsBxlccs.setText(bean.getTgbxlccs1());
         //通过作业地点关键列车次数

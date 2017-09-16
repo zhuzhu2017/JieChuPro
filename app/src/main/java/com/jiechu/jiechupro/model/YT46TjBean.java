@@ -25,6 +25,8 @@ public class YT46TjBean implements Serializable {
     private String sjyglccs1;
     //提前10分钟下道次数
     private String tqxdcs1;
+    //实际上道作业次数
+    private String sjsdzycs1;
     //通过本线（邻线）列车次数
     private String tgbxlccs1;
     //通过作业地点关键列车次数
@@ -37,6 +39,14 @@ public class YT46TjBean implements Serializable {
     private String tqxdcs2;
     //实际上道作业次数
     private String sjsdzycs2;
+
+    public String getSjsdzycs1() {
+        return sjsdzycs1;
+    }
+
+    public void setSjsdzycs1(String sjsdzycs1) {
+        this.sjsdzycs1 = sjsdzycs1;
+    }
 
     public String getFprq_app() {
         return fprq_app;
