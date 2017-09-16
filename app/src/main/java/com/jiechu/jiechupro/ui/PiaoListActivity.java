@@ -134,6 +134,7 @@ public class PiaoListActivity extends BaseActivity {
                 try {
                     JSONArray rows = object.getJSONArray("rows");
                     if (!isLoadMore) {
+                        piaoList.clear();
                         if (rows != null && rows.length() > 0) {
                             lvPiao.setVisibility(View.VISIBLE);
                             for (int i = 0; i < rows.length(); i++) {
