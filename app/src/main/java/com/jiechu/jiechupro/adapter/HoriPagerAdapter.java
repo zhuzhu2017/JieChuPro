@@ -60,6 +60,7 @@ public class HoriPagerAdapter extends PagerAdapter {
                 .setFadeDuration(300)
                 .setRoundingParams(roundingParams)
                 .setPlaceholderImage(R.drawable.deafult_image)
+                .setActualImageScaleType(ScalingUtils.ScaleType.CENTER_CROP)
                 .setPlaceholderImageScaleType(ScalingUtils.ScaleType.FIT_XY)
                 .setFailureImage(R.drawable.deafult_image)
                 .setFailureImageScaleType(ScalingUtils.ScaleType.FIT_XY)

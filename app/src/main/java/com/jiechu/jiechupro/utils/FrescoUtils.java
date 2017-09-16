@@ -1,7 +1,9 @@
 package com.jiechu.jiechupro.utils;
 
+import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Animatable;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
@@ -13,20 +15,23 @@ import com.facebook.common.executors.UiThreadImmediateExecutorService;
 import com.facebook.common.references.CloseableReference;
 import com.facebook.datasource.DataSource;
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.backends.pipeline.PipelineDraweeControllerBuilder;
+import com.facebook.drawee.controller.BaseControllerListener;
+import com.facebook.drawee.drawable.ScalingUtils;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.facebook.imagepipeline.core.ImagePipelineFactory;
 import com.facebook.imagepipeline.datasource.BaseBitmapDataSubscriber;
 import com.facebook.imagepipeline.image.CloseableImage;
+import com.facebook.imagepipeline.image.ImageInfo;
 import com.facebook.imagepipeline.request.ImageRequest;
 import com.facebook.imagepipeline.request.ImageRequestBuilder;
+import com.jiechu.jiechupro.view.photodraweeview.PhotoDraweeView;
 
 import java.io.File;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-
-import okhttp3.internal.Util;
 
 /**
  * author:gaojingwei
@@ -166,6 +171,31 @@ public class FrescoUtils {
                 callback.onSuccess(uri, result);
             }
         });
+    }
+
+
+    public static void setBigPic(final Activity ctx, final String url, final PhotoDraweeView draweeView) {
+        if (!TextUtils.isEmpty(url)) {
+            draweeView.getHierarchy().setActualImageScaleType(ScalingUtils.ScaleType.CENTER_INSIDE);
+            try {
+                PipelineDraweeControllerBuilder controller = Fresco.newDraweeControllerBuilder();
+                controller.setUri(Uri.parse(url));
+                controller.setOldController(draweeView.getController());
+                controller.setControllerListener(new BaseControllerListener<ImageInfo>() {
+                    @Override
+                    public void onFinalImageSet(String id, ImageInfo imageInfo, Animatable animatable) {
+                        super.onFinalImageSet(id, imageInfo, animatable);
+                        if (imageInfo == null || draweeView == null) {
+                            return;
+                        }
+                        draweeView.update(DisplayUtil.getScreenWidth(ctx), imageInfo.getHeight());
+                    }
+                });
+                draweeView.setController(controller.build());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 }

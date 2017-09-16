@@ -35,6 +35,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
+import static com.jiechu.jiechupro.Constants.BASE_IP;
+
 /**
  * 作业现场照片
  * Created by allen on 2017/9/12.
@@ -83,10 +85,13 @@ public class XCPicFrag extends RxFragment implements TopHoriMenuAdapter.OnRecycl
     private HoriIconPicAdapter iconPicAdapter;  //横向图片索引填充adapter
     private HoriPagerAdapter horiPagerAdapter;  //横向大图View Pager
 
+    private String BASE_PIC_URL;    //拼接图片
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ctx = getActivity();
+        BASE_PIC_URL = "http://" + BASE_IP;
         Bundle arguments = getArguments();
         if (arguments != null) {
             id = arguments.getString("id");
@@ -148,10 +153,10 @@ public class XCPicFrag extends RxFragment implements TopHoriMenuAdapter.OnRecycl
                             JSONObject picObj = pictures.getJSONObject(j);
                             XCPicBean.Pictures pictureBean = new XCPicBean.Pictures();
                             pictureBean.setInnerName(picObj.has("Name") ? picObj.getString("Name") : "");
-                            pictureBean.setUrl_CZXL(picObj.has("Url_CZXL") ? picObj.getString("Url_CZXL") : "");
-                            pictureBean.setUrl_CZXL_ICON(picObj.has("Url_CZXL_ICON") ? picObj.getString("Url_CZXL_ICON") : "");
-                            pictureBean.setUrl_SXL(picObj.has("Url_SXL") ? picObj.getString("Url_SXL") : "");
-                            pictureBean.setUrl_SXL_ICON(picObj.has("Url_SXL_ICON") ? picObj.getString("Url_SXL_ICON") : "");
+                            pictureBean.setUrl_CZXL(picObj.has("Url_CZXL") ? BASE_PIC_URL + picObj.getString("Url_CZXL") : "");
+                            pictureBean.setUrl_CZXL_ICON(picObj.has("Url_CZXL_ICON") ? BASE_PIC_URL + picObj.getString("Url_CZXL_ICON") : "");
+                            pictureBean.setUrl_SXL(picObj.has("Url_SXL") ? BASE_PIC_URL + picObj.getString("Url_SXL") : "");
+                            pictureBean.setUrl_SXL_ICON(picObj.has("Url_SXL_ICON") ? BASE_PIC_URL + picObj.getString("Url_SXL_ICON") : "");
                             picList.add(pictureBean);
                         }
                         bean.setPicturesList(picList);

@@ -26,7 +26,7 @@ public class PicActivity extends BaseActivity {
         setContentView(R.layout.activity_pic);
         ButterKnife.bind(this);
         String url = getIntent().getStringExtra("url");
-        FrescoUtils.setCommonPic(url, bigPicView);
+        FrescoUtils.setBigPic(this, url, bigPicView);
     }
 
     @Override
