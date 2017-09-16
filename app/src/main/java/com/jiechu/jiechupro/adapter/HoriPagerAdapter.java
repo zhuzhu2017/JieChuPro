@@ -1,7 +1,9 @@
 package com.jiechu.jiechupro.adapter;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +45,7 @@ public class HoriPagerAdapter extends PagerAdapter {
         return view == object;
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     public Object instantiateItem(ViewGroup container, final int position) {
         SimpleDraweeView imageView = new SimpleDraweeView(ctx);
