@@ -75,12 +75,29 @@
     rx.internal.util.atomic.LinkedQueueNode consumerNode;
 }
 
+#gson
+-keep class com.google.gson.** {*;}
+-keep class sun.misc.Unsafe { *; }
+-keep class com.google.gson.stream.** { *; }
+-keep class com.google.gson.examples.android.model.** { *; }
+-keep class com.google.** {
+    <fields>;
+    <methods>;
+}
+-dontwarn com.google.gson.**
+
+ -keep public interface com.facebook.**
+  -keep class com.facebook.**
+  -keep class com.facebook.** { *; }
 # Gson
 -keep class com.google.gson.stream.** { *; }
 -keepattributes EnclosingMethod
 
 #不混淆实现Serializable的类
 -keepnames class * implements java.io.Serializable #需要序列化和反序列化的类不能被混淆（注：Java反射用到的类也不能被混淆）
+
+ -keep class com.linkedin.** { *; }
+ -keepattributes Signature
 
 #不混淆自定义的View
 -keep public class * extends android.view.View {
@@ -118,4 +135,14 @@
 
 -keep public class com.jiechu.jiechupro.R$*{
 public static final int *;
+}
+
+#facebook_fresco
+# Keep our interfaces so they can be used by other ProGuard rules.
+# See http://sourceforge.net/p/proguard/bugs/466/
+-keep,allowobfuscation @interface com.facebook.common.internal.DoNotStrip
+# Do not strip any method/class that is annotated with @DoNotStrip
+-keep @com.facebook.common.internal.DoNotStrip class *
+-keepclassmembers class * {
+    @com.facebook.common.internal.DoNotStrip *;
 }
