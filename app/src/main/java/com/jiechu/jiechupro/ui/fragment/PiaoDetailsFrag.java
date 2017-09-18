@@ -9,12 +9,17 @@ import android.widget.TextView;
 
 import com.jiechu.jiechupro.R;
 import com.jiechu.jiechupro.model.PiaoDetailsBean;
+import com.jiechu.jiechupro.model.ZYZCYBean;
 import com.jiechu.jiechupro.net.HttpManager;
 import com.jiechu.jiechupro.net.HttpOnNextListener;
 import com.jiechu.jiechupro.net.api.PiaoDetailsApi;
+import com.jiechu.jiechupro.utils.DataUtil;
 import com.trello.rxlifecycle.components.support.RxFragment;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -139,13 +144,69 @@ public class PiaoDetailsFrag extends RxFragment {
                     detailsBean.setZynr(object.has("zynr") ? (object.getString("zynr") + "").replace("null", "") : "");
                     detailsBean.setGzpyxqqd_app(object.has("gzpyxqqd_app") ? (object.getString("gzpyxqqd_app") + "").replace("null", "") : "");
                     detailsBean.setGzpyxqzd_app(object.has("gzpyxqzd_app") ? (object.getString("gzpyxqzd_app") + "").replace("null", "") : "");
-                    detailsBean.setSj_select(object.has("sj_select") ? (object.getString("sj_select") + "").replace("null", "") : "");
-                    detailsBean.setZyzcy_list(object.has("zyzcy_list") ? (object.getString("zyzcy_list") + "").replace("null", "") : "");
-                    detailsBean.setWbcy_list(object.has("wbcy_list") ? (object.getString("wbcy_list") + "").replace("null", "") : "");
+                    detailsBean.setGzldr(object.has("gzldr") ? (object.getString("gzldr") + "").replace("null", "") : "");
+                    //设置作业人员
+                    if (object.has("zyzcy") && object.get("zyzcy") instanceof JSONArray) {
+                        //全部作业组成员数组
+                        JSONArray zyzcyArray = object.getJSONArray("zyzcy");
+                        //获取司机信息
+                        if (object.has("sj_select")) {
+                            String sj_select = object.getString("sj_select");
+                            List<ZYZCYBean> sjList = DataUtil.filterSj(zyzcyArray, sj_select);
+                            //设置数据
+                            String sjString = "";
+                            if (sjList != null && sjList.size() > 0) {
+                                for (int i = 0; i < sjList.size(); i++) {
+                                    ZYZCYBean bean = sjList.get(i);
+                                    String cymc = bean.getCymc();
+                                    if (i < sjList.size() - 1) {
+                                        sjString = sjString + cymc + "/";
+                                    } else {
+                                        sjString = sjString + cymc;
+                                    }
+                                }
+                            }
+                            detailsBean.setSj_select(sjString);
+                        }
+                        //获取作业组成员数据
+                        if (object.has("zyzcy_list")) {
+                            String zyzcy_list = object.getString("zyzcy_list");
+                            List<ZYZCYBean> zyzcyList = DataUtil.filterZyzcy(zyzcyArray, zyzcy_list);
+                            //设置数据
+                            String zyzcyString = "";
+                            if (zyzcyList != null && zyzcyList.size() > 0) {
+                                for (int i = 0; i < zyzcyList.size(); i++) {
+                                    ZYZCYBean bean = zyzcyList.get(i);
+                                    String cymc = bean.getCymc();
+                                    String aqdj = bean.getAqdj();
+                                    zyzcyString = zyzcyString + cymc + "（" + aqdj + "）" + " ";
+                                }
+                            }
+                            detailsBean.setZyzcy_list(zyzcyString);
+                        }
+                        //获取其他作业组成员数据
+                        if (object.has("wbcy_list")) {
+                            String wbcy_list = object.getString("wbcy_list");
+                            List<ZYZCYBean> wbcyList = DataUtil.filterWbcy(zyzcyArray, wbcy_list);
+                            //设置数据
+                            String wbcyString = "";
+                            if (wbcyList != null && wbcyList.size() > 0) {
+                                for (int i = 0; i < wbcyList.size(); i++) {
+                                    ZYZCYBean bean = wbcyList.get(i);
+                                    String cymc = bean.getCymc();
+                                    String aqdj = bean.getAqdj();
+                                    wbcyString = wbcyString + cymc + "（" + aqdj + "）" + " ";
+                                }
+                            }
+                            detailsBean.setWbcy_list(wbcyString);
+                        }
+                    }
                     detailsBean.setXtdsb(object.has("xtdsb") ? (object.getString("xtdsb") + "").replace("null", "") : "");
                     detailsBean.setZsdxwz(object.has("zsdxwz") ? (object.getString("zsdxwz") + "").replace("null", "") : "");
                     detailsBean.setZyqfhcs(object.has("zyqfhcs") ? (object.getString("zyqfhcs") + "").replace("null", "") : "");
                     detailsBean.setQtaqcs(object.has("qtaqcs") ? (object.getString("qtaqcs") + "").replace("null", "") : "");
+                    detailsBean.setBgzyzcyjl(object.has("bgzyzcyjl") ? (object.getString("bgzyzcyjl") + "").replace("null", "") : "");
+                    detailsBean.setGzpjssj_app(object.has("gzpjssj_app") ? (object.getString("gzpjssj_app") + "").replace("null", "") : "");
                     detailsBean.setGzpldrqz(object.has("gzpldrqz") ? (object.getString("gzpldrqz") + "").replace("null", "") : "");
                     detailsBean.setFprqz(object.has("fprqz") ? (object.getString("fprqz") + "").replace("null", "") : "");
                     //设置数据
@@ -197,6 +258,10 @@ public class PiaoDetailsFrag extends RxFragment {
         tvDetailsZyqfhcs.setText(detailsBean.getZyqfhcs());
         //其他安全措施
         tvDetailsQtaqcs.setText(detailsBean.getQtaqcs());
+        //变更作业组成员记录
+        tvDetailsBgzyzcyjl.setText(detailsBean.getBgzyzcyjl());
+        //工作票结束时间
+        tvDetailsGzpjssj.setText(detailsBean.getGzpjssj_app());
         //工作领导人签字
         tvDetailsLdrqz.setText(detailsBean.getGzpldrqz());
         //发票人签字

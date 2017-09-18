@@ -44,10 +44,30 @@ public class PiaoDetailsBean implements Serializable {
     private String zyqfhcs;
     //其他安全措施
     private String qtaqcs;
+    //变更作业组成员记录
+    private String bgzyzcyjl;
+    //工作票结束时间
+    private String gzpjssj_app;
     //工作领导人签字
     private String gzpldrqz;
     //发票人签字
     private String fprqz;
+
+    public String getBgzyzcyjl() {
+        return bgzyzcyjl;
+    }
+
+    public void setBgzyzcyjl(String bgzyzcyjl) {
+        this.bgzyzcyjl = bgzyzcyjl;
+    }
+
+    public String getGzpjssj_app() {
+        return gzpjssj_app;
+    }
+
+    public void setGzpjssj_app(String gzpjssj_app) {
+        this.gzpjssj_app = gzpjssj_app;
+    }
 
     public String getGqmc() {
         return gqmc;
