@@ -136,6 +136,9 @@ public class YT46TJFrag extends RxFragment {
                     bean.setSjyglccs2(!object.has("sjyglccs2") ? "" : (object.getString("sjyglccs2") + "").replace("null", ""));
                     bean.setTqxdcs2(!object.has("tqxdcs2") ? "" : (object.getString("tqxdcs2") + "").replace("null", ""));
                     bean.setSjsdzycs2(!object.has("sjsdzycs2") ? "" : (object.getString("sjsdzycs2") + "").replace("null", ""));
+                    bean.setTgbxlccs2(!object.has("tgbxlccs2") ? "" : (object.getString("tgbxlccs2") + "").replace("null", ""));
+                    bean.setTgzyddgjlccs2(!object.has("tgzyddgjlccs2") ? "" : (object.getString("tgzyddgjlccs2") + "").replace("null", ""));
+
                     //设置数据
                     setData(bean);
                 } catch (Exception e) {
@@ -179,9 +182,9 @@ public class YT46TJFrag extends RxFragment {
         //实际上道作业次数
         tvDetailsSjsdcs2.setText(bean.getSjsdzycs2());
         //通过本线（邻线）列车次数
-        tvDetailsBxlccs2.setText(bean.getTgbxlccs1());
+        tvDetailsBxlccs2.setText(bean.getTgbxlccs2());
         //通过作业地点关键列车次数
-        tvDetailsGjlccs2.setText(bean.getTgzyddgjlccs1());
+        tvDetailsGjlccs2.setText(bean.getTgzyddgjlccs2());
     }
 
     @Override

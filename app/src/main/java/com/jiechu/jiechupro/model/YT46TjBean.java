@@ -39,6 +39,26 @@ public class YT46TjBean implements Serializable {
     private String tqxdcs2;
     //实际上道作业次数
     private String sjsdzycs2;
+    //通过本线（邻线）列车次数
+    private String tgbxlccs2;
+    //通过作业地点关键列车次数
+    private String tgzyddgjlccs2;
+
+    public String getTgbxlccs2() {
+        return tgbxlccs2;
+    }
+
+    public void setTgbxlccs2(String tgbxlccs2) {
+        this.tgbxlccs2 = tgbxlccs2;
+    }
+
+    public String getTgzyddgjlccs2() {
+        return tgzyddgjlccs2;
+    }
+
+    public void setTgzyddgjlccs2(String tgzyddgjlccs2) {
+        this.tgzyddgjlccs2 = tgzyddgjlccs2;
+    }
 
     public String getSjsdzycs1() {
         return sjsdzycs1;
